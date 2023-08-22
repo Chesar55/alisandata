@@ -1,31 +1,9 @@
-// to get current year
-function getYear() {
-    var currentDate = new Date();
-    var currentYear = currentDate.getFullYear();
-    document.querySelector("#displayYear").innerHTML = currentYear;
-}
-
-getYear();
-
-// nice select
-$(document).ready(function () {
-    $('select').niceSelect();
-});
-
-// date picker
-$(function () {
-    $("#inputDate").datepicker({
-        autoclose: true,
-        todayHighlight: true
-    }).datepicker('update', new Date());
-});
-
-// owl carousel slider js
 $('.team_carousel').owlCarousel({
     loop: true,
     margin: 15,
     dots: true,
     autoplay: true,
+    autoplayTimeout: 15000, // 15 saniye
     navText: [
         '<i class="fa fa-angle-left" aria-hidden="true"></i>',
         '<i class="fa fa-angle-right" aria-hidden="true"></i>'
@@ -43,4 +21,4 @@ $('.team_carousel').owlCarousel({
             items: 3
         }
     }
-})
+});

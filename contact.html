@@ -86,8 +86,8 @@
   </div>
 
   <!-- contact section -->
-<div class="row">
-  <div class="col-md-8 col-lg-6 mx-auto">
+<div class="row justify-content-center">
+  <div class="col-md-8 col-lg-6">
     <div class="form_container">
       <form action="https://formspree.io/f/xvojarkl" method="POST">
         <div class="text-center">
@@ -102,8 +102,9 @@
           <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="phoneNumber">Phone Number (with area code):</label>
+          <label for="phoneNumber">Phone Number:</label>
           <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <small class="form-text text-muted">Please include area code.</small>
         </div>
         <div class="form-group">
           <label for="job">Your Job:</label>
@@ -116,6 +117,7 @@
         <div class="form-group">
           <label for="message">Message (maximum 250 characters):</label>
           <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
+          <small class="form-text text-muted">Maximum 250 characters.</small>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

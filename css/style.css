@@ -106,7 +106,7 @@ a:focus {
 .hero_area {
   position: relative;
    background-image: url('https://wallpaperaccess.com/full/8088686.gif');
-  min-height: 150vh;
+  min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

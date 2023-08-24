@@ -105,7 +105,12 @@ a:focus {
 /*header section*/
 .hero_area {
   position: relative;
-   background-image: url('images/ezgif-5-d534984da0.gif');
+   .animated-bg {
+    /* Diğer stiller */
+    background-image: url('images/ezgif-5-d534984da0.gif');
+    /* Diğer stiller devam eder */
+}
+
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;

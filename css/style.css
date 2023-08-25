@@ -483,7 +483,7 @@ a:focus {
 }
 
 .server_section {
-  background-image: linear-gradient(110deg, transparent 25%, "image.gif" 25%);
+  background: url("image.gif"); /* Arka plan resmi */
   padding: 55px 0;
   color: #ffffff;
 }

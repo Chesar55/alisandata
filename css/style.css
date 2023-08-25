@@ -409,10 +409,10 @@ a:focus {
 }
 
 .about_section .detail-box a:hover {
+  background-image: url("image.gif");
   background-color: transparent;
   color: #ff4646;
 }
-
 .service_section {
   position: relative;
 }

@@ -301,9 +301,16 @@
         <div class="col-md-6">
           <div class="img-box">
             <img src="images/server-img.jpg" alt="">
-            </a>
-                      <a class="play_btn" href="contact.html">
-                      </a>
+         <div class="play_btn">
+  <a class="btn-2" href="contact.html"></a>
+</div>
+
+<script>
+document.querySelector(".play_btn a").addEventListener("click", function() {
+  window.location.href = "contact.html";
+});
+</script>
+
               <button>
                 <i class="fa fa-play" aria-hidden="true"></i>
               </button>

@@ -400,7 +400,7 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: #ff4646;
-  color: #ffffff;
+ background-image: url("image.gif");
   border-radius: 5px;
   border: 1px solid #ff4646;
   -webkit-transition: all .3s;

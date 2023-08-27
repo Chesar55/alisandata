@@ -400,7 +400,10 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: #ff4646;
- background-image: url("image.gif");
+  background-image: url("image.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   border-radius: 5px;
   border: 1px solid #ff4646;
   -webkit-transition: all .3s;
@@ -409,8 +412,8 @@ a:focus {
 }
 
 .about_section .detail-box a:hover {
-  background-image: url("image.gif");
   background-color: transparent;
+  background-image: url("image.gif");
   color: #ff4646;
 }
 .service_section {

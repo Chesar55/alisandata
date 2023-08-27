@@ -416,6 +416,17 @@ a:focus {
 .service_section {
   position: relative;
 }
+.service_section .box {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.service_section .box.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 .service_section .box {
   margin-top: 45px;

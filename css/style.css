@@ -383,6 +383,7 @@ a:focus {
 
 .about_section .row {
   -webkit-box-align: center;
+  background-image: url('image.gif');
       -ms-flex-align: center;
           align-items: center;
 }

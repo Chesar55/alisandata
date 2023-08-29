@@ -400,12 +400,12 @@ a:focus {
   display: inline-block;
   padding: 10px 45px;
   background-color: #ff4646;
-  background-image: #ff4646; /*deneme yaptığım yer */
   border-radius: 5px;
   border: 1px solid #ff4646;
   -webkit-transition: all .3s;
   transition: all .3s;
   margin-top: 15px;
+  color: white; /* Yazı rengini beyaz yapar */
 }
 
 .about_section .detail-box a:hover {

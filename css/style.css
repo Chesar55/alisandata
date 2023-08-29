@@ -473,6 +473,20 @@ a:focus {
   max-height: 45px;
 }
 
+/* Stil dosyanıza ekleyin */
+.btn-box {
+  display: inline-block;
+}
+
+.btn-2 {
+  display: block;
+  padding: 10px 20px;
+  background-color: #ff4646;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
 .service_section .box .detail-box {
   margin-top: 15px;
 }

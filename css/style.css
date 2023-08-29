@@ -412,6 +412,7 @@ a:focus {
   background-image: url("image.gif");
   background-color: transparent;
   color: #ff4646;
+  text-decoration: none;
 }
 .service_section {
   position: relative;

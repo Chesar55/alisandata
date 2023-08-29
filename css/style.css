@@ -493,35 +493,24 @@ a:focus {
 .service_section .box:hover .img-box {
   background-color: #ff4646;
 }
-
-/* gpt section */
-
-.contact-box {
-  background-color: #ffffff; /* Kutucuk arka plan rengi */
-  border: 2px solid #ff4646; /* Kutucuk kenarlık rengi ve kalınlığı */
-  border-radius: 8px; /* Kutucuk köşe yuvarlatma */
-  padding: 20px; /* Kutucuk iç içe boşluğu */
-  text-align: center; /* İçerik merkezlemesi */
-  width: 200px; /* Kutucuk genişliği */
+/*  dtydr */
+.service_section .detail-box .btn-2 {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #ff4646;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #ff4646;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.contact-link {
-  text-decoration: none; /* Bağlantı altı çizgiyi kaldır */
+.service_section .detail-box .btn-2:hover {
+  background-color: transparent;
+  color: #ff4646;
 }
 
-.contact-box-inner {
-  color: #ff4646; /* İçerik rengi */
-  font-weight: bold; /* İçerik kalın font */
-  transition: background-color 0.3s, color 0.3s; /* Geçiş efekti */
-}
-
-.contact-box:hover .contact-box-inner {
-  background-color: #ff4646; /* Kutucuk üzerine gelince arka plan rengi */
-  color: #ffffff; /* Kutucuk üzerine gelince içerik rengi */
-}
-
-
-/* gpt section */
+/* dfhgg */
 
 .server_section {
   

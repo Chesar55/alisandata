@@ -704,10 +704,6 @@ a:focus {
   margin: 10px 0;
 }
 
-.price_section .price_container .box .btn-box {
-  margin-top: 25px;
-}
-
 .price_section .price_container .box .btn-box a {
   display: inline-block;
   padding: 10px 35px;
@@ -715,9 +711,10 @@ a:focus {
   color: #ffffff;
   border-radius: 5px;
   border: 1px solid #ff4646;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  border: none;
+  -webkit-transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
+  position: relative;
+  z-index: 2; /* Butonu ön plana getir */
 }
 
 .price_section .price_container .box .btn-box a:hover {
@@ -725,6 +722,7 @@ a:focus {
   color: #ff4646;
 }
 
+/* Sadece Buy Now butonuna hover olduğunda rengi değiştir */
 .price_section .price_container .box .btn-box a:hover {
   background-color: #03a7d3;
   color: #ffffff;

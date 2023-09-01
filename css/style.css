@@ -668,29 +668,32 @@ a:focus {
 }
 
 .price_section .price_container .box {
-  width: calc(33.33% - 30px); /* 3 kutuyu yan yana sırala ve aralarına boşluk bırak */
-  margin-right: 30px; /* Kutular arasındaki boşluğu ayarla */
-  margin-bottom: 30px; /* Kutuların altındaki boşluğu ayarla */
-  padding: 20px; /* Kutu içeriğinin etrafındaki boşluğu ayarla */
+  margin: 0 15px 45px 15px;
+  width: calc(33.33% - 30px); /* 3 kutuyu yan yana sığdırmak için */
+  float: left;
+  box-sizing: border-box;
+}
+
+/* Kutu içeriği stilini düzenle */
+.price_section .price_container .box .detail-box {
+  padding: 20px;
   background-color: #fff;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
 }
 
 .price_section .price_container .box .detail-box h2 {
-  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .price_section .price_container .box .detail-box h2 span {
-  font-size: 2rem;
+  font-size: 2rem; /* Boyutu küçültmek için */
 }
 
 .price_section .price_container .box .detail-box h6 {
   text-transform: uppercase;
   color: #03a7d3;
-  font-size: 1rem;
+  font-size: 16px; /* Boyutu küçültmek için */
   margin-bottom: 10px;
 }
 
@@ -703,20 +706,21 @@ a:focus {
   margin: 10px 0;
 }
 
+/* Buton stilleri */
 .price_section .price_container .box .btn-box {
-  margin-top: 15px;
+  margin-top: 15px; /* Boşluk küçültmek için */
   text-align: center;
 }
 
 .price_section .price_container .box .btn-box a {
   display: inline-block;
-  padding: 8px 20px;
+  padding: 10px 25px; /* Boyutu küçültmek için */
   background-color: #ff4646;
   color: #ffffff;
   border-radius: 5px;
-  text-decoration: none;
-  -webkit-transition: background-color 0.3s, color 0.3s;
+  border: none;
   transition: background-color 0.3s, color 0.3s;
+  text-decoration: none;
 }
 
 .price_section .price_container .box .btn-box a:hover {
@@ -724,12 +728,18 @@ a:focus {
   color: #ffffff;
 }
 
+/* Kutuya hover olduğunda */
 .price_section .price_container .box:hover {
   color: #ffffff;
   background-color: #03a7d3;
 }
 
 .price_section .price_container .box:hover h6 {
+  color: #ffffff;
+}
+
+.price_section .price_container .box:hover a {
+  background-color: #03a7d3;
   color: #ffffff;
 }
 

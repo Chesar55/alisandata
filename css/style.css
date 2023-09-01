@@ -734,7 +734,7 @@ a:focus {
 }
 
 .price_section .price_container .box:hover .detail-box {
-  background-color: #03a7d3;
+ 
 }
 
 .price_section .price_container .box:hover h6 {
@@ -742,7 +742,7 @@ a:focus {
 }
 
 .price_section .price_container .box:hover a {
-  background-color: #03a7d3;
+ 
   color: #ffffff;
 }
 }

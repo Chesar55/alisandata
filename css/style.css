@@ -667,6 +667,28 @@ a:focus {
   color: #ff4646;
 }
 
+/* price_section stilini düzenle */
+.price_section {
+  text-align: center; /* İçeriği ortala */
+}
+
+.price_section .price_container {
+  display: flex;
+  flex-wrap: wrap; /* Her satırda 3 kutucuk */
+  justify-content: space-between; /* Kutucuklar arasında boşluk bırak */
+  margin: 0 auto; /* Orta hizalama */
+  max-width: 960px; /* Maksimum genişlik ayarı, gerektiğinde değiştirin */
+}
+
+.price_section .price_container .box {
+  margin: 0 15px 30px; /* Kutucuklar arası boşluk ve kenar boşluğu */
+  width: calc(33.33% - 30px); /* 3 kutucuğu eşit genişlikte ayarla */
+}
+
+/* Diğer stiller burada */
+
+
+
 .price_section .price_container .box {
   margin: 45px 15px 0 15px;
 }

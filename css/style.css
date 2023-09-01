@@ -672,6 +672,8 @@ a:focus {
   width: calc(33.33% - 30px); /* 3 kutuyu yan yana sığdırmak için */
   float: left;
   box-sizing: border-box;
+  overflow: hidden; /* İçeriklerin taşmasını engelle */
+  position: relative; /* Z indeksi belirlemek için */
 }
 
 /* Kutu içeriği stilini düzenle */
@@ -680,6 +682,8 @@ a:focus {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  position: relative; /* Z indeksi belirlemek için */
+  z-index: 1; /* İçerikleri ön plana getir */
 }
 
 .price_section .price_container .box .detail-box h2 {
@@ -721,6 +725,8 @@ a:focus {
   border: none;
   transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
+  position: relative;
+  z-index: 2; /* Butonu ön plana getir */
 }
 
 .price_section .price_container .box .btn-box a:hover {
@@ -732,6 +738,7 @@ a:focus {
 .price_section .price_container .box:hover {
   color: #ffffff;
   background-color: #03a7d3;
+  overflow: visible; /* İçerikleri görünür yap */
 }
 
 .price_section .price_container .box:hover h6 {
@@ -742,7 +749,6 @@ a:focus {
   background-color: #03a7d3;
   color: #ffffff;
 }
-
 .client_section {
   padding-bottom: 45px;
 }

@@ -729,15 +729,9 @@ a:focus {
   color: #ffffff;
 }
 
-.price_section .price_container .box:hover {
-  color: #ffffff;
-}
 
 
 
-.price_section .price_container .box:hover h6 {
-  color: #ffffff;
-}
 
 
 }

@@ -733,17 +733,13 @@ a:focus {
   color: #ffffff;
 }
 
-.price_section .price_container .box:hover .detail-box {
- 
-}
+
 
 .price_section .price_container .box:hover h6 {
   color: #ffffff;
 }
 
-.price_section .price_container .box:hover a {
- 
-  color: #ffffff;
+
 }
 }
 .client_section {

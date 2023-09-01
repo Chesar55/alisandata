@@ -668,83 +668,27 @@ a:focus {
 }
 
 .price_section .price_container .box {
-  margin: 45px 15px 0 15px;
-}
-
-.price_section .price_container .box .detail-box {
-  width: 300px;
-  padding: 40px 20px 15px 20px;
-  background-color: #fff;
-  border-radius: 25px;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  max-width: 200px; /* Maksimum genişlik */
+  margin: 0 auto; /* Kutuları yatayda ortala */
+  padding: 20px; /* İçeriği çevrele */
+  text-align: center; /* İçeriği ortala */
+  border-radius: 10px; /* Köşeleri yuvarla */
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Kutu gölgesi */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Kutu gölgesi */
 }
 
 .price_section .price_container .box .detail-box h2 {
-  font-weight: bold;
-}
-
-.price_section .price_container .box .detail-box h2 span {
-  font-size: 3rem;
+  font-size: 1.5rem; /* Başlık font boyutunu ayarlayın */
 }
 
 .price_section .price_container .box .detail-box h6 {
-  text-transform: uppercase;
-  color: #03a7d3;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.price_section .price_container .box .price_features {
-  padding: 0;
-  list-style-type: none;
-}
-
-.price_section .price_container .box .price_features li {
-  margin: 10px 0;
-}
-
-.price_section .price_container .box .btn-box {
-  margin-top: 25px;
+  font-size: 1rem; /* Alt başlık font boyutunu ayarlayın */
+  margin-top: 10px; /* Alt başlık ile başlık arasındaki boşluk */
 }
 
 .price_section .price_container .box .btn-box a {
-  display: inline-block;
-  padding: 10px 35px;
-  background-color: #ff4646;
-  color: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #ff4646;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  border: none;
-}
-
-.price_section .price_container .box .btn-box a:hover {
-  background-color: transparent;
-  color: #ff4646;
-}
-
-.price_section .price_container .box .btn-box a:hover {
-  background-color: #03a7d3;
-  color: #ffffff;
-}
-
-.price_section .price_container .box:hover {
-  color: #ffffff;
-}
-
-.price_section .price_container .box:hover .detail-box {
-  background-color: #03a7d3;
-}
-
-.price_section .price_container .box:hover h6 {
-  color: #ffffff;
-}
-
-.price_section .price_container .box:hover a {
-  background-color: #03a7d3;
-  color: #ffffff;
+  padding: 8px 20px; /* Buton boyutunu ayarlayın */
+  font-size: 0.9rem; /* Buton font boyutunu ayarlayın */
 }
 
 .client_section {

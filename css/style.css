@@ -258,20 +258,20 @@ a:focus {
 
 /*end header section*/
 
-.image-container {
+.image-box {
   position: relative;
   width: 300px; /* İmajın genişliği */
   height: 200px; /* İmajın yüksekliği */
   overflow: hidden; /* Taşan kısmı gösterme */
 }
 
-.image-container img {
+.image-box img {
   position: relative;
   top: 0;
   transition: top 0.5s; /* Animasyon süresi */
 }
 
-.image-container:hover img {
+.image-box:hover img {
   top: -20px; /* Yukarı kaydırma miktarı */
 }
 /* slider section */

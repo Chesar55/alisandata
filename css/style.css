@@ -667,11 +667,13 @@ a:focus {
   color: #ff4646;
 }
 .price_section .price_container .box {
+ display: inline-block;
   margin: 45px 15px 0 15px;
+
 }
 
 .price_section .price_container .box .detail-box {
-  display: inline-block;
+  
   width: 300px;
   padding: 40px 20px 15px 20px;
   background-color: #fff;

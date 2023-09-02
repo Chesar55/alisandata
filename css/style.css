@@ -967,8 +967,8 @@ a:focus {
 
 /* info section */
 .info_section {
-   background-image: url('image.gif');
-  color: #ffffff;
+   
+  color: transparent;
 }
 
 .info_section h4 {

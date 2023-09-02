@@ -258,22 +258,8 @@ a:focus {
 
 /*end header section*/
 
-.image-box {
-  position: relative;
-  width: 300px; /* İmajın genişliği */
-  height: 200px; /* İmajın yüksekliği */
-  overflow: hidden; /* Taşan kısmı gösterme */
-}
 
-.image-box img {
-  position: relative;
-  top: 0;
-  transition: top 0.5s; /* Animasyon süresi */
-}
 
-.image-box:hover img {
-  top: -20px; /* Yukarı kaydırma miktarı */
-}
 /* slider section */
 .slider_section {
   -webkit-box-flex: 1;

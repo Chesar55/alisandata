@@ -126,7 +126,7 @@ a:focus {
 /*header section*/
 .hero_area {
   position: relative;
-  background-color: #020230;
+  background-color: none ;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -892,7 +892,7 @@ a:focus {
 
 .footer_section {
   position: relative;
-  background-color: #020230;
+  background-color: none;
   text-align: center;
 
   p {

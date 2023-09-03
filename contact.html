@@ -88,6 +88,30 @@
     <!-- end header section -->
   </div>
 
+  <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
+  <script>
+    function validateForm() {
+      // Kurallara uyumsuzlukları kontrol et
+      var phoneNumberInput = document.getElementById("phoneNumber");
+      if (!/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(phoneNumberInput.value)) {
+        alert("Lütfen telefon numarasını doğru bir şekilde girin (örneğin: 555-555-5555).");
+        return false;
+      }
+
+      var jobInput = document.getElementById("job");
+      if (!/^[A-Za-z\s]+$/.test(jobInput.value)) {
+        alert("İş alanı yalnızca harf ve boşluk içerebilir.");
+        return false;
+      }
+
+      // Diğer kuralları burada ekleyebilirsiniz
+
+      return true;
+    }
+  </script>
+</body>
+
+</html>
   <!-- contact section -->
 
   <style>
@@ -101,14 +125,14 @@
     border-color: #ff4646;
   }
 </style>
-  
+
 <div class="row justify-content-center mt-4">
   <div class="col-md-8 col-lg-6">
     <div class="form_container">
-      <form action="https://formspree.io/f/xvojarkl" method="POST">
-       <div class="text-center">
-         <h2 style="color: #ff4646;">CONTACT US</h2>
-       </div>
+      <form action="https://formspree.io/f/xvojarkl" method="POST" onsubmit="return validateForm()">
+        <div class="text-center">
+          <h2 style="color: #ffffff;">CONTACT US</h2>
+        </div>
         <div class="form-group">
           <label for="fullName" style="color: #ff4646;">Full Name:</label>
           <input type="text" id="fullName" name="fullName" class="form-control" required>
@@ -119,8 +143,8 @@
         </div>
         <div class="form-group">
           <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-          <input type="number" id="phoneNumber" name="phoneNumber" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-          <small class="form-text text-muted">Please include area code.</small>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+          <small class="form-text text-muted">Please include area code. (e.g., 555-555-5555)</small>
         </div>
         <div class="form-group">
           <label for="job" style="color: #ff4646;">Your Job:</label>
@@ -142,7 +166,6 @@
     </div>
   </div>
 </div>
-<div class="mt-4"></div>
 
 
   <!-- end contact section -->

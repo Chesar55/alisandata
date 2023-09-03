@@ -90,19 +90,26 @@
 
   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
   <script>
-    function validateForm() {
-      // Kurallara uyumsuzlukları kontrol et
-      var phoneNumberInput = document.getElementById("phoneNumber");
-      if (!/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/.test(phoneNumberInput.value)) {
-        alert("Lütfen telefon numarasını doğru bir şekilde girin (örneğin: 555-555-5555).");
-        return false;
-      }
+   function validateForm() {
+  // Get the phone number
+  var phoneNumberInput = document.getElementById("phoneNumber");
+  var phoneNumber = phoneNumberInput.value.trim();
+
+  // Add the "+" sign and country code to the beginning (e.g., +1 for the United States)
+  var countryCode = "+1"; // Example country code (for the United States)
+  phoneNumber = countryCode + phoneNumber;
+
+  // Check if the phone number is in the correct format
+  if (!/^\+\d{1,}-\d{3,}-\d{4,}$/.test(phoneNumber)) {
+    alert("Please enter the phone number in the correct format (e.g., +1-555-555-5555).");
+    return false;
+  }
 
       var jobInput = document.getElementById("job");
-      if (!/^[A-Za-z\s]+$/.test(jobInput.value)) {
-        alert("İş alanı yalnızca harf ve boşluk içerebilir.");
-        return false;
-      }
+if (!/^[A-Za-z\s]+$/.test(jobInput.value)) {
+  alert("The job field can only contain letters and spaces.");
+  return false;
+}
 
       // Diğer kuralları burada ekleyebilirsiniz
 

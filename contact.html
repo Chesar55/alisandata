@@ -185,10 +185,10 @@
           <input type="email" id="email" name="email" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="\+\d{1,}-\d{10}" required>
-          <small class="form-text text-muted">Please include area code. (e.g., +15555555555)</small>
-        </div>
+  <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
+  <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="^\+\d{1,}-\d{10}$" required>
+  <small class="form-text text-muted">Please include country code. (e.g., +15555555555)</small>
+</div>
         <div class="form-group">
           <label for="job" style="color: #ff4646;">Your Job:</label>
           <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+" required>

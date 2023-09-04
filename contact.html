@@ -178,7 +178,7 @@
         </div>
         <div class="form-group">
           <label for="fullName" style="color: #ff4646;">Full Name:</label>
-          <input type="text" id="fullName" name="fullName" class="form-control" required>
+          <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
         </div>
         <div class="form-group">
           <label for="email" style="color: #ff4646;">Your Email:</label>
@@ -186,8 +186,8 @@
         </div>
         <div class="form-group">
           <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-          <small class="form-text text-muted">Please include area code. (e.g., 555-555-5555)</small>
+          <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="\+\d{1,}-\d{10}" required>
+          <small class="form-text text-muted">Please include area code. (e.g., +15555555555)</small>
         </div>
         <div class="form-group">
           <label for="job" style="color: #ff4646;">Your Job:</label>
@@ -195,7 +195,7 @@
         </div>
         <div class="form-group">
           <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-          <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="0" required>
+          <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
         </div>
         <div class="form-group">
           <label for="message" style="color: #ff4646;">Message:</label>
@@ -209,7 +209,6 @@
     </div>
   </div>
 </div>
-
 
   <!-- end contact section -->
 

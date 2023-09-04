@@ -90,18 +90,14 @@
 
   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
   <script>
-   function validateForm() {
+  function validateForm() {
   // Get the phone number
   var phoneNumberInput = document.getElementById("phoneNumber");
   var phoneNumber = phoneNumberInput.value.trim();
 
-  // Add the "+" sign and country code to the beginning (e.g., +1 for the United States)
-  var countryCode = "+1"; // Example country code (for the United States)
-  phoneNumber = countryCode + phoneNumber;
-
   // Check if the phone number is in the correct format
-  if (!/^\+\d{1,}-\d{3,}-\d{4,}$/.test(phoneNumber)) {
-    alert("Please enter the phone number in the correct format (e.g., +1-555-555-5555).");
+  if (!/^\+\d+$/.test(phoneNumber)) {
+    alert("Please enter the phone number in the correct format (e.g., +15555555555).");
     return false;
   }
 
@@ -111,10 +107,35 @@ if (!/^[A-Za-z\s]+$/.test(jobInput.value)) {
   return false;
 }
 
-      // Diğer kuralları burada ekleyebilirsiniz
+      {
+  // Get the full name input
+  var fullNameInput = document.getElementById("fullName");
+  var fullName = fullNameInput.value.trim();
 
-      return true;
-    }
+  // Check if the full name contains only letters and spaces
+  if (!/^[A-Za-z\s]+$/.test(fullName)) {
+    alert("Full name can only contain letters and spaces.");
+    return false;
+  }
+        {
+  // Get the potential customers input
+  var potentialCustomersInput = document.getElementById("potentialCustomers");
+  var potentialCustomers = potentialCustomersInput.value.trim();
+
+  // Check if it contains only numbers
+  if (!/^\d+$/.test(potentialCustomers)) {
+    alert("Please enter a valid number for potential customers.");
+    return false;
+  }
+
+  // Convert the potentialCustomers to a numeric value
+  potentialCustomers = parseInt(potentialCustomers);
+
+  // Check if it's at least 1000
+  if (potentialCustomers < 1000) {
+    alert("Please enter a minimum of 1000 potential customers.");
+    return false;
+  }
   </script>
 </body>
 

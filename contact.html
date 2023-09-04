@@ -111,15 +111,15 @@
       return false;
     }
 
-    // Get the phone number input
-    var phoneNumberInput = document.getElementById("phoneNumber");
-    var phoneNumber = phoneNumberInput.value.trim();
+   // Get the phone number input
+var phoneNumberInput = document.getElementById("phoneNumber");
+var phoneNumber = phoneNumberInput.value.trim();
 
-    // Check if the phone number is in the correct format
-    if (!/^\+\d{1,}-\d{10}$/.test(phoneNumber)) {
-      alert("Please enter the phone number in the correct format (e.g., +15555555555).");
-      return false;
-    }
+// Check if the phone number is in the correct format
+if (!/^\+[\d]+$/.test(phoneNumber)) {
+  alert("Please enter a valid phone number format (e.g., +15555555555).");
+  return false;
+}
 
     // Get the job input
     var jobInput = document.getElementById("job");

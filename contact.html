@@ -89,7 +89,7 @@
   </div>
 
   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
-  <script>
+<script>
   function validateForm() {
     // Get the full name input
     var fullNameInput = document.getElementById("fullName");
@@ -111,15 +111,15 @@
       return false;
     }
 
-   // Get the phone number input
-var phoneNumberInput = document.getElementById("phoneNumber");
-var phoneNumber = phoneNumberInput.value.trim();
+    // Get the phone number input
+    var phoneNumberInput = document.getElementById("phoneNumber");
+    var phoneNumber = phoneNumberInput.value.trim();
 
-// Check if the phone number is in the correct format
-if (!/^\+[\d]+$/.test(phoneNumber)) {
-  alert("Please enter a valid phone number format (e.g., +15555555555).");
-  return false;
-}
+    // Check if the phone number is in the correct format
+    if (!/^\+[\d]+$/.test(phoneNumber)) {
+      alert("Please enter a valid phone number format (e.g., +15555555555).");
+      return false;
+    }
 
     // Get the job input
     var jobInput = document.getElementById("job");
@@ -186,8 +186,8 @@ if (!/^\+[\d]+$/.test(phoneNumber)) {
         </div>
         <div class="form-group">
   <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-  <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control" pattern="^\+\d{1,}-\d{10}$" required>
-  <small class="form-text text-muted">Please include country code. (e.g., +15555555555)</small>
+  <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+  <small class="form-text text-muted">Please enter your phone number in the format +1234567890</small>
 </div>
         <div class="form-group">
           <label for="job" style="color: #ff4646;">Your Job:</label>

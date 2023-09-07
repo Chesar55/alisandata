@@ -63,26 +63,27 @@
     </section>
     <!-- end price section -->
 
-    <!-- info section -->
-    <section class="info_section layout_padding2">
+    <!-- Crypto payment section -->
+    <section class="crypto_payment_section layout_padding">
       <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <!-- Your contact information here -->
+        <div class="heading_container">
+          <h2>Crypto Payment</h2>
+          <p>Select a cryptocurrency to make your payment:</p>
+        </div>
+        <div class="crypto_payment_options">
+          <div class="crypto_option">
+            <img src="images/bitcoin.png" alt="Bitcoin">
+            <button onclick="makePayment('bitcoin')">Pay with Bitcoin</button>
           </div>
-          <div class="col-md-3">
-            <!-- Your links here -->
+          <div class="crypto_option">
+            <img src="images/ethereum.png" alt="Ethereum">
+            <button onclick="makePayment('ethereum')">Pay with Ethereum</button>
           </div>
-          <div class="col-md-3">
-            <!-- Your info here -->
-          </div>
-          <div class="col-md-3 mb-0">
-            <!-- Your subscription form here -->
-          </div>
+          <!-- Add more cryptocurrency options as needed -->
         </div>
       </div>
     </section>
-    <!-- end info section -->
+    <!-- End Crypto payment section -->
   </div>
 
   <!-- footer section -->
@@ -102,6 +103,14 @@
   <script src="js/bootstrap.js"></script>
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
+
+  <script>
+    function makePayment(crypto) {
+      // Handle cryptocurrency payment here
+      alert("You have selected to pay with " + crypto);
+      // You can implement your payment gateway integration here
+    }
+  </script>
 
 </body>
 

@@ -89,221 +89,204 @@
   </div>
 
   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
-<script>
-  function validateForm() {
-    // Get the full name input
-    var fullNameInput = document.getElementById("fullName");
-    var fullName = fullNameInput.value.trim();
+    <script>
+        function validateForm() {
+            // Get the full name input
+            var fullNameInput = document.getElementById("fullName");
+            var fullName = fullNameInput.value.trim();
 
-    // Check if the full name contains only letters and spaces
-    if (!/^[A-Za-z\s]+$/.test(fullName)) {
-      alert("Please enter your full name correctly (letters and spaces only).");
-      return false;
-    }
+            // Check if the full name contains only letters and spaces
+            if (!/^[A-Za-z\s]+$/.test(fullName)) {
+                alert("Please enter your full name correctly (letters and spaces only).");
+                return false;
+            }
 
-    // Get the email input
-    var emailInput = document.getElementById("email");
-    var email = emailInput.value.trim();
+            // Get the email input
+            var emailInput = document.getElementById("email");
+            var email = emailInput.value.trim();
 
-    // Check if the email has "@" and ends with ".com"
-    if (!/^[\w\.-]+@[\w\.-]+\.\w+$/.test(email)) {
-      alert("Please enter a valid email address (e.g., example@example.com).");
-      return false;
-    }
+            // Check if the email has "@" and ends with ".com"
+            if (!/^[\w\.-]+@[\w\.-]+\.\w+$/.test(email)) {
+                alert("Please enter a valid email address (e.g., example@example.com).");
+                return false;
+            }
 
-    // Get the phone number input
-    var phoneNumberInput = document.getElementById("phoneNumber");
-    var phoneNumber = phoneNumberInput.value.trim();
+            // Get the phone number input
+            var phoneNumberInput = document.getElementById("phoneNumber");
+            var phoneNumber = phoneNumberInput.value.trim();
 
-    // Check if the phone number is in the correct format
-    if (!/^\+[\d]+$/.test(phoneNumber)) {
-      alert("Please enter a valid phone number format (e.g., +15555555555).");
-      return false;
-    }
+            // Check if the phone number is in the correct format
+            if (!/^\+[\d]+$/.test(phoneNumber)) {
+                alert("Please enter a valid phone number format (e.g., +15555555555).");
+                return false;
+            }
 
-    // Get the job input
-    var jobInput = document.getElementById("job");
-    var job = jobInput.value.trim();
+            // Get the job input
+            var jobInput = document.getElementById("job");
+            var job = jobInput.value.trim();
 
-    // Check if the job contains only letters and spaces
-    if (!/^[A-Za-z\s]+$/.test(job)) {
-      alert("The job field can only contain letters and spaces.");
-      return false;
-    }
+            // Check if the job contains only letters and spaces
+            if (!/^[A-Za-z\s]+$/.test(job)) {
+                alert("The job field can only contain letters and spaces.");
+                return false;
+            }
+        }
+    </script>
 
+    <div class="form-group">
+        <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+    </div>
+
+    <script>
+        document.getElementById("potentialCustomers").addEventListener("input", function() {
+            // Get the potential customers input
+            var potentialCustomersInput = this;
+            var potentialCustomers = potentialCustomersInput.value.trim();
+
+            // Check if it contains only numbers
+            if (!/^\d+$/.test(potentialCustomers)) {
+                alert("Please enter a valid number for potential customers.");
+                return false;
+            }
+
+            // Convert the potentialCustomers to a numeric value
+            potentialCustomers = parseInt(potentialCustomers);
+
+            // Check if it's within the range of 1000 to 100,000,000
+            if (potentialCustomers < 1000 || potentialCustomers > 100000000) {
+                alert("Please enter a number between 1000 and 100,000,000 for potential customers.");
+                return false;
+            }
+
+            // Calculate the price based on the potential customers
+            var price;
+            if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
+                price = (potentialCustomers * 0.25).toFixed(2);
+            } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
+                price = (potentialCustomers * 0.22).toFixed(2);
+            } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
+                price = (potentialCustomers * 0.19).toFixed(2);
+            } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
+                price = (potentialCustomers * 0.16).toFixed(2);
+            } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
+                price = (potentialCustomers * 0.13).toFixed(2);
+            } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
+                price = (potentialCustomers * 0.10).toFixed(2);
+            } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
+                price = (potentialCustomers * 0.06).toFixed(2);
+            } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
+                price = (potentialCustomers * 0.03).toFixed(2);
+            } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
+                price = (potentialCustomers * 0.0009).toFixed(2);
+            } else {
+                price = "Invalid quantity";
+            }
+
+            // Update the displayed price
+            document.getElementById("displayedPrice").textContent = "$ " + price + "/PCS";
+        });
+    </script>
+
+    <!-- contact section -->
+
+    <style>
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4646;
+            border-color: #ff4646;
+        }
     </style>
 
-<div class="form-group">
-  <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-  <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
-</div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8 col-lg-6">
+            <div class="form_container">
+                <form action="https://formspree.io/f/xvojarkl" method="POST" onsubmit="return validateForm()">
+                    <div class="text-center">
+                        <h2 style="color: #ffffff;">CONTACT US</h2>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+                    <div class="form-group">
+                        <label for="fullName" style="color: #ff4646;">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
 
-<script>
-  document.getElementById("potentialCustomers").addEventListener("input", function() {
-    // Get the potential customers input
-    var potentialCustomersInput = this;
-    var potentialCustomers = potentialCustomersInput.value.trim();
+                    <div class="form-group">
+                        <label for="email" style="color: #ff4646;">Your Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
 
-    // Check if it contains only numbers
-    if (!/^\d+$/.test(potentialCustomers)) {
-      alert("Please enter a valid number for potential customers.");
-      return false;
-    }
+                    <div class="form-group">
+                        <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
+                        <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+                        <small class="form-text text-muted">Please enter your phone number in the format +1234567890</small>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
 
-    // Convert the potentialCustomers to a numeric value
-    potentialCustomers = parseInt(potentialCustomers);
+                    <div class="form-group">
+                        <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+                        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
 
-    // Check if it's within the range of 1000 to 100,000,000
-    if (potentialCustomers < 1000 || potentialCustomers > 100000000) {
-      alert("Please enter a number between 1000 and 100,000,000 for potential customers.");
-      return false;
-    }
+                    <div class="form-group">
+                        <label for="message" style="color: #ff4646;">Message:</label>
+                        <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
+                        <small class="form-text text-muted">Maximum 250 characters.</small>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
 
-    // Calculate the price based on the potential customers
-    var price;
-    if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
-      price = (potentialCustomers * 0.25).toFixed(2);
-    } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
-      price = (potentialCustomers * 0.22).toFixed(2);
-    } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
-      price = (potentialCustomers * 0.19).toFixed(2);
-    } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
-      price = (potentialCustomers * 0.16).toFixed(2);
-    } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
-      price = (potentialCustomers * 0.13).toFixed(2);
-    } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
-      price = (potentialCustomers * 0.10).toFixed(2);
-    } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
-      price = (potentialCustomers * 0.06).toFixed(2);
-    } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
-      price = (potentialCustomers * 0.03).toFixed(2);
-    } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
-      price = (potentialCustomers * 0.0009).toFixed(2);
-    } else {
-      price = "Invalid quantity";
-    }
-
-    // Update the displayed price
-    document.getElementById("displayedPrice").textContent = "$ " + price + "/PCS";
-  });
-</script>
-
-
-
-</body>
-
-</html>
-  <!-- contact section -->
-
-  <style>
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-
-  .btn-primary:hover {
-    background-color: #ff4646;
-    border-color: #ff4646;
-  }
-</style>
-
-<div class="row justify-content-center mt-4">
-  <div class="col-md-8 col-lg-6">
-    <div class="form_container">
-       <form action="https://formspree.io/f/xvojarkl" method="POST" onsubmit="return validateForm()">
-        <div class="text-center">
-          <h2 style="color: #ffffff;">CONTACT US</h2>
+                    <center>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </center>
+                </form>
+            </div>
         </div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-        <div class="form-group">
-          <label for="fullName" style="color: #ff4646;">Full Name:</label>
-          <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
-        </div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-         
-        <div class="form-group">
-          <label for="email" style="color: #ff4646;">Your Email:</label>
-          <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-         
-        <div class="form-group">
-  <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-  <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
-  <small class="form-text text-muted">Please enter your phone number in the format +1234567890</small>
-</div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-         
-        <div class="form-group">
-          <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-          <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
-        </div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-         
-        <div class="form-group">
-          <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-          <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
-        </div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-         
-        <div class="form-group">
-          <label for="message" style="color: #ff4646;">Message:</label>
-          <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
-          <small class="form-text text-muted">Maximum 250 characters.</small>
-        </div>
-         <style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-</style>
-         
-        <center>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </center>
-      </form>
     </div>
-  </div>
-</div>
 
-  <!-- end contact section -->
+    <!-- end contact section -->
 
   <!-- info section -->
 

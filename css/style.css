@@ -519,6 +519,26 @@ a:focus {
   background-color: transparent;
   color: #ff4646;
 }
+/* hafif yukarı */
+box {
+  position: relative;
+  overflow: hidden;
+}
+
+.box:hover .detail-box {
+  transform: translateY(-5px); /* Mause imleci üzerine geldiğinde yukarı doğru kaydırma */
+}
+
+.detail-box {
+  transition: transform 0.2s ease; /* Animasyon süresi ve geçiş türü */
+}
+
+/* Önceki konumuna geri dönme */
+.box:not(:hover) .detail-box {
+  transform: translateY(0);
+}
+/* hafif yukarı */
+
 /* benim seq */
 
 .faq_section .price_container .box {

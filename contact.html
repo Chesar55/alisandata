@@ -90,74 +90,20 @@
 
   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
     <script>
-        function validateForm() {
-            // Get the full name input
-            var fullNameInput = document.getElementById("fullName");
-            var fullName = fullNameInput.value.trim();
-
-            // Check if the full name contains only letters and spaces
-            if (!/^[A-Za-z\s]+$/.test(fullName)) {
-                alert("Please enter your full name correctly (letters and spaces only).");
-                return false;
-            }
-
-            // Get the email input
-            var emailInput = document.getElementById("email");
-            var email = emailInput.value.trim();
-
-            // Check if the email has "@" and ends with ".com"
-            if (!/^[\w\.-]+@[\w\.-]+\.\w+$/.test(email)) {
-                alert("Please enter a valid email address (e.g., example@example.com).");
-                return false;
-            }
-
-            // Get the phone number input
-            var phoneNumberInput = document.getElementById("phoneNumber");
-            var phoneNumber = phoneNumberInput.value.trim();
-
-            // Check if the phone number is in the correct format
-            if (!/^\+[\d]+$/.test(phoneNumber)) {
-                alert("Please enter a valid phone number format (e.g., +15555555555).");
-                return false;
-            }
-
-            // Get the job input
-            var jobInput = document.getElementById("job");
-            var job = jobInput.value.trim();
-
-            // Check if the job contains only letters and spaces
-            if (!/^[A-Za-z\s]+$/.test(job)) {
-                alert("The job field can only contain letters and spaces.");
-                return false;
-            }
-        }
-    </script>
-
-    <div class="form-group">
-        <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
-    </div>
-
-    <script>
-        document.getElementById("potentialCustomers").addEventListener("input", function() {
+        // Fiyat hesaplama fonksiyonu
+        function calculatePrice() {
             // Get the potential customers input
-            var potentialCustomersInput = this;
+            var potentialCustomersInput = document.getElementById("potentialCustomers");
             var potentialCustomers = potentialCustomersInput.value.trim();
 
             // Check if it contains only numbers
             if (!/^\d+$/.test(potentialCustomers)) {
                 alert("Please enter a valid number for potential customers.");
-                return false;
+                return;
             }
 
             // Convert the potentialCustomers to a numeric value
             potentialCustomers = parseInt(potentialCustomers);
-
-            // Check if it's within the range of 1000 to 100,000,000
-            if (potentialCustomers < 1000 || potentialCustomers > 100000000) {
-                alert("Please enter a number between 1000 and 100,000,000 for potential customers.");
-                return false;
-            }
 
             // Calculate the price based on the potential customers
             var price;
@@ -185,7 +131,7 @@
 
             // Update the displayed price
             document.getElementById("displayedPrice").textContent = "$ " + price + "/PCS";
-        });
+        }
     </script>
 
     <!-- contact section -->
@@ -256,6 +202,8 @@
                     <div class="form-group">
                         <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
                         <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+                        <!-- Fiyatı görüntülemek için bir yer ekledik -->
+                        <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
                     </div>
                     <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
@@ -287,7 +235,6 @@
     </div>
 
     <!-- end contact section -->
-
   <!-- info section -->
 
   <section class="info_section layout_padding2">

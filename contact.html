@@ -221,10 +221,42 @@
     }
 </style>
          
-        <div class="form-group">
-          <label for="job" style="color: #ff4646;">Your Job:</label>
-          <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+" required>
-        </div>
+<div class="form-group">
+  <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+  <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+</div>
+
+<script>
+  document.getElementById("potentialCustomers").addEventListener("input", function() {
+    var potentialCustomers = parseInt(this.value);
+    var price;
+
+    if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
+      price = (potentialCustomers * 0.25).toFixed(2);
+    } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
+      price = (potentialCustomers * 0.22).toFixed(2);
+    } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
+      price = (potentialCustomers * 0.19).toFixed(2);
+    } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
+      price = (potentialCustomers * 0.16).toFixed(2);
+    } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
+      price = (potentialCustomers * 0.13).toFixed(2);
+    } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
+      price = (potentialCustomers * 0.10).toFixed(2);
+    } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
+      price = (potentialCustomers * 0.06).toFixed(2);
+    } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
+      price = (potentialCustomers * 0.03).toFixed(2);
+    } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
+      price = (potentialCustomers * 0.0009).toFixed(2);
+    } else {
+      price = "Invalid quantity";
+    }
+
+    document.getElementById("price").textContent = "$ " + price + "/PCS";
+  });
+</script>
+
          <style>
     /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
     .form_container .form-group {

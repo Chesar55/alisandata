@@ -131,8 +131,17 @@
       return false;
     }
 
+    </style>
+
+<div class="form-group">
+  <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+  <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+</div>
+
+<script>
+  document.getElementById("potentialCustomers").addEventListener("input", function() {
     // Get the potential customers input
-    var potentialCustomersInput = document.getElementById("potentialCustomers");
+    var potentialCustomersInput = this;
     var potentialCustomers = potentialCustomersInput.value.trim();
 
     // Check if it contains only numbers
@@ -149,8 +158,36 @@
       alert("Please enter a number between 1000 and 100,000,000 for potential customers.");
       return false;
     }
-  }
+
+    // Calculate the price based on the potential customers
+    var price;
+    if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
+      price = (potentialCustomers * 0.25).toFixed(2);
+    } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
+      price = (potentialCustomers * 0.22).toFixed(2);
+    } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
+      price = (potentialCustomers * 0.19).toFixed(2);
+    } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
+      price = (potentialCustomers * 0.16).toFixed(2);
+    } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
+      price = (potentialCustomers * 0.13).toFixed(2);
+    } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
+      price = (potentialCustomers * 0.10).toFixed(2);
+    } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
+      price = (potentialCustomers * 0.06).toFixed(2);
+    } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
+      price = (potentialCustomers * 0.03).toFixed(2);
+    } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
+      price = (potentialCustomers * 0.0009).toFixed(2);
+    } else {
+      price = "Invalid quantity";
+    }
+
+    // Update the displayed price
+    document.getElementById("displayedPrice").textContent = "$ " + price + "/PCS";
+  });
 </script>
+
 
 
 </body>
@@ -221,42 +258,10 @@
     }
 </style>
          
-<div class="form-group">
-  <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-  <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
-</div>
-
-<script>
-  document.getElementById("potentialCustomers").addEventListener("input", function() {
-    var potentialCustomers = parseInt(this.value);
-    var price;
-
-    if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
-      price = (potentialCustomers * 0.25).toFixed(2);
-    } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
-      price = (potentialCustomers * 0.22).toFixed(2);
-    } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
-      price = (potentialCustomers * 0.19).toFixed(2);
-    } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
-      price = (potentialCustomers * 0.16).toFixed(2);
-    } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
-      price = (potentialCustomers * 0.13).toFixed(2);
-    } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
-      price = (potentialCustomers * 0.10).toFixed(2);
-    } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
-      price = (potentialCustomers * 0.06).toFixed(2);
-    } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
-      price = (potentialCustomers * 0.03).toFixed(2);
-    } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
-      price = (potentialCustomers * 0.0009).toFixed(2);
-    } else {
-      price = "Invalid quantity";
-    }
-
-    document.getElementById("price").textContent = "$ " + price + "/PCS";
-  });
-</script>
-
+        <div class="form-group">
+          <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+          <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+        </div>
          <style>
     /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
     .form_container .form-group {

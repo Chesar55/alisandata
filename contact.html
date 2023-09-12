@@ -88,7 +88,7 @@
     <!-- end header section -->
   </div>
 
-   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
+    <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
     <script>
         // Fiyat hesaplama fonksiyonu
         function calculatePrice() {
@@ -131,6 +131,22 @@
 
             // Update the displayed price
             document.getElementById("displayedPrice").textContent = "$ " + price + "/PCS";
+        }
+
+        // Formu doğrulama fonksiyonu
+        function validateForm() {
+            // Get the job input
+            var jobInput = document.getElementById("job");
+            var job = jobInput.value.trim();
+
+            // Check if the job field is empty
+            if (job === "") {
+                alert("Please enter your job.");
+                return false;
+            }
+
+            // Devam etmek için true döndür
+            return true;
         }
     </script>
 
@@ -201,7 +217,7 @@
 
                     <div class="form-group">
                         <label for="job" style="color: #ff4646;">Your Job:</label>
-                        <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+">
+                        <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+" required>
                     </div>
                     <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */

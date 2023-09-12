@@ -88,7 +88,7 @@
     <!-- end header section -->
   </div>
 
-  <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
+   <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
     <script>
         // Fiyat hesaplama fonksiyonu
         function calculatePrice() {
@@ -200,8 +200,20 @@
                     </style>
 
                     <div class="form-group">
+                        <label for="job" style="color: #ff4646;">Your Job:</label>
+                        <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+">
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+
+                    <div class="form-group">
                         <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-                        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required>
+                        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required oninput="calculatePrice()">
                         <!-- Fiyatı görüntülemek için bir yer ekledik -->
                         <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
                     </div>

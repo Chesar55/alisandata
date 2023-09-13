@@ -469,20 +469,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Baloncuğu</title>
     <style>
-        /* WhatsApp baloncuğu stilini düzenleyin */
+        /* WhatsApp */
         #whatsapp-container {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #none; /* WhatsApp rengi */
+            background-color: #none; 
             color: #fff;
             padding: 10px;
             border-radius: 50px;
             cursor: pointer;
-            z-index: 9999; /* Diğer içeriklerin önünde görünecek */
+            z-index: 9999; 
         }
 
-        /* WhatsApp simgesini küçültün */
+       
         #whatsapp-icon {
             width: 40px;
             height: 40px;
@@ -491,18 +491,18 @@
     </style>
 </head>
 <body>
-    <!-- WhatsApp baloncuğu için HTML -->
+    
     <div id="whatsapp-container">
-        <img id="whatsapp-icon" src="wp.png" alt="">
+        <img id="whatsapp-icon" src="images/wp.png" alt="">
         <span style="font-weight: bold;"> </span>
     </div>
 
-    <!-- WhatsApp baloncuğu için JavaScript -->
+ 
     <script>
-        // WhatsApp numaranızı aşağıdaki formatta girin: COUNTRY_CODE + PHONE_NUMBER
-        var whatsappNumber = '447883847313'; // Örnek bir WhatsApp numarası
+      
+        var whatsappNumber = '447883847313'; 
 
-        // WhatsApp baloncuğuna tıklanınca WhatsApp sohbetini aç
+        
         document.getElementById('whatsapp-container').addEventListener('click', function() {
             window.open('https://api.whatsapp.com/send?phone=' + whatsappNumber, '_blank');
         });

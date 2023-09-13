@@ -1,7 +1,7 @@
 body {
   font-family: "Roboto", sans-serif;
   color: #0c0c0c;
-background-image: url('none');
+background-image: url('image.gif');
   overflow-x: hidden;
 }
 
@@ -106,7 +106,7 @@ a:focus {
 .hero_area {
   position: relative;
  
-    background-image: url('none');
+    background-image: url('image.gif');
   
   min-height: 100vh;
   display: -webkit-box;
@@ -263,7 +263,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     /* Arka plan GIF resmini buraya ekleyin */
-    background-image: url('none');
+    background-image: url('image.gif');
 }
 
 
@@ -419,7 +419,7 @@ body {
 }
 
 .about_section .detail-box a:hover {
-  background-image: url("none");
+  background-image: url("image.gif");
   background-color: transparent;
   color: #ff4646;
   text-decoration: none;
@@ -1144,7 +1144,7 @@ box {
 /* footer section*/
 .footer_section {
   position: relative;
-  background-color: none;
+  background-color: image.gif;
   text-align: center;
 }
 

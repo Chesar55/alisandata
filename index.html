@@ -465,7 +465,7 @@
 </html>
         <html>
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp Baloncuğu</title>
     <style>
@@ -479,19 +479,28 @@
             padding: 10px;
             border-radius: 50px;
             cursor: pointer;
+            z-index: 9999; /* Diğer içeriklerin önünde görünecek */
+        }
+
+        /* WhatsApp simgesini küçültün */
+        #whatsapp-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <!-- WhatsApp baloncuğu için HTML -->
     <div id="whatsapp-container">
+        <img id="whatsapp-icon" src="wp.png" alt="WhatsApp Simgesi">
         <span style="font-weight: bold;">Text Now</span> yazan bir yazı olsun
     </div>
 
     <!-- WhatsApp baloncuğu için JavaScript -->
     <script>
         // WhatsApp numaranızı aşağıdaki formatta girin: COUNTRY_CODE + PHONE_NUMBER
-        var whatsappNumber = '+447883847313'; // Örnek bir WhatsApp numarası
+        var whatsappNumber = '905551234567'; // Örnek bir WhatsApp numarası
 
         // WhatsApp baloncuğuna tıklanınca WhatsApp sohbetini aç
         document.getElementById('whatsapp-container').addEventListener('click', function() {

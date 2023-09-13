@@ -887,6 +887,65 @@ a:focus {
 }
 
 /* end info section */
+$white: #ffffff;
+$black: #000000;
+$primary1: #03a7d3;
+$primary2: #ff4646;
+$textCol: #999;
+
+@mixin main-font {
+  font-family: "Roboto", sans-serif;
+}
+
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  padding: $pad1 $pad2;
+  background-color: $col1;
+  color: $col2;
+  border-radius: $bRadius;
+  border: 1px solid $col1;
+  transition: all .3s;
+
+  &:hover {
+    background-color: transparent;
+    color: $col1;
+  }
+}
+
+/* Diğer stillendirmeler devam ediyor... */
+
+body {
+  @include main-font;
+  color: #0c0c0c;
+  background-color: #f8f8f8;
+  background-image: url('image.gif'); /* Arka plan GIF resmini buraya ekleyin */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* Diğer stillendirmeler devam ediyor... */
+
+/* footer section*/
+.footer_section {
+  position: relative;
+  background-color: #f8f8f8; /* Footer arka plan rengi */
+  text-align: center;
+
+  p {
+    color: $white;
+    padding: 20px 0;
+    margin: 0;
+    border-top: 1px solid $white;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+/* Diğer stillendirmeler devam ediyor... */
 
 /* footer section*/
 

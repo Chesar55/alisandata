@@ -126,7 +126,7 @@ a:focus {
 /*header section*/
 .hero_area {
   position: relative;
-  background-color: none ;
+  background-color: image.gif ;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -790,7 +790,7 @@ a:focus {
 
 /* info section */
 .info_section {
-  background-color: none;
+  background-color: image.gif;
   color: $white;
 
   h4 {
@@ -892,7 +892,7 @@ a:focus {
 
 .footer_section {
   position: relative;
-  background-color: none;
+  background-color: image.gif;
   text-align: center;
 
   p {

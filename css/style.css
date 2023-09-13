@@ -539,6 +539,17 @@ box {
 }
 /* hafif yukarı */
 
+/* Testimonial kutularındaki resimleri ön planda göstermek için z-index ayarı */
+.carousel-item .img-box {
+    position: relative;
+    z-index: 2; /* Resmi diğer içeriklerin önüne getirin */
+}
+
+.carousel-item .detail-box {
+    position: relative;
+    z-index: 1; /* Metin kutusunu resmin arkasına yerleştirin */
+}
+
 /* benim seq */
 
 .faq_section .price_container .box {

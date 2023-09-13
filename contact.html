@@ -130,9 +130,14 @@
             }
 
             // Update the displayed price
-            document.getElementById("displayedPrice").textContent = "$ " + price + "/PCS";
+            document.getElementById("displayedPrice").textContent = "$ " + price + "/TOTAL";
         }
-
+      
+<style>
+    #displayedPrice {
+        color: green; /* Yeşil renk */
+    }
+</style>
         // Formu doğrulama fonksiyonu
         function validateForm() {
             // Get the job input

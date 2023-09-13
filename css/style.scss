@@ -887,6 +887,27 @@ a:focus {
 }
 
 /* end info section */
+
+/* footer section*/
+
+.footer_section {
+  position: relative;
+  background-color: image.gif;
+  text-align: center;
+
+  p {
+    color: $white;
+    padding: 20px 0;
+    margin: 0;
+    border-top: 1px solid $white;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+// end footer section
 $white: #ffffff;
 $black: #000000;
 $primary1: #03a7d3;
@@ -944,26 +965,3 @@ body {
     }
   }
 }
-
-/* Diğer stillendirmeler devam ediyor... */
-
-/* footer section*/
-
-.footer_section {
-  position: relative;
-  background-color: image.gif;
-  text-align: center;
-
-  p {
-    color: $white;
-    padding: 20px 0;
-    margin: 0;
-    border-top: 1px solid $white;
-
-    a {
-      color: inherit;
-    }
-  }
-}
-
-// end footer section

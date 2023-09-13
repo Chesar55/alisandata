@@ -258,6 +258,13 @@ a:focus {
 
 /*end header section*/
 
+body {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Arka plan GIF resmini buraya ekleyin */
+    background-image: url('image.gif');
+}
 
 
 /* slider section */

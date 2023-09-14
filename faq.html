@@ -348,7 +348,21 @@
   </div>
 </footer>
 <!-- footer section -->
+<style> /* Resmi yavaşça aşağı-yukarı hareket ettiren animasyon */
+@keyframes floatUpDown {
+    0%,
+    100% {
+        transform: translateY(0); /* Başlangıç ve bitiş durumu: Hiçbir hareket yok */
+    }
+    50% {
+        transform: translateY(-10px); /* Orta nokta: Yavaşça yukarı hareket */
+    }
+}
 
+.img-box img {
+    animation: floatUpDown 5s ease-in-out infinite; /* Animasyonu resme uygula */
+}
+</style>
 <!-- jQery -->
 <script src="js/jquery-3.4.1.min.js"></script>
 <!-- bootstrap js -->

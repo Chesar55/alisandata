@@ -348,7 +348,28 @@
     </div>
   </section>
   <!-- end client section -->
+<script>
+  // Carousel nesnesini alın
+  var carousel = document.getElementById('customCarousel2');
 
+  // Kararlı bir geçiş efekti sağlamak için 'sliding' adında özel bir sınıf ekleyin
+  carousel.addEventListener('slide.bs.carousel', function (e) {
+    var activeItem = e.from;
+    var nextItem = e.to;
+    
+    // Eski ve yeni slaytları alın
+    var oldSlide = carousel.querySelectorAll('.carousel-item')[activeItem];
+    var newSlide = carousel.querySelectorAll('.carousel-item')[nextItem];
+
+    // Eski slaytı kaydırın
+    oldSlide.style.transform = 'translateX(-100%)';
+    oldSlide.style.transition = 'transform 0.5s ease';
+
+    // Yeni slaytı kaydırın
+    newSlide.style.transform = 'translateX(0)';
+    newSlide.style.transition = 'transform 0.5s ease';
+  });
+</script>
   <!-- contact section -->
 
   <!-- end contact section -->

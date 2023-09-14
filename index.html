@@ -500,48 +500,6 @@
 
 </html>
         <html>
-<head>
-   <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Baloncuğu</title>
-    <style>
-        /* WhatsApp */
-        #whatsapp-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #none; 
-            color: #fff;
-            padding: 10px;
-            border-radius: 50px;
-            cursor: pointer;
-            z-index: 9999; 
-        }
 
-       
-        #whatsapp-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-    
-    <div id="whatsapp-container">
-        <img id="whatsapp-icon" src="images/wp.png" alt="">
-        <span style="font-weight: bold;"> </span>
-    </div>
-
- 
-    <script>
-      
-        var whatsappNumber = '447883847313'; 
-
-        
-        document.getElementById('whatsapp-container').addEventListener('click', function() {
-            window.open('https://api.whatsapp.com/send?phone=' + whatsappNumber, '_blank');
-        });
-    </script>
 </body>
 </html>

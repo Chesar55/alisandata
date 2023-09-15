@@ -1159,3 +1159,8 @@ box {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+#canli-destek-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}

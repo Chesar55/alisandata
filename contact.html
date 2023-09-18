@@ -156,31 +156,30 @@ displayedPrice.style.color = "green";
 <script>
     // Referans kodunu kontrol etme fonksiyonu
     function checkReferenceCode() {
-        // Get the reference code input and status span
+        // Get the reference code input
         var referenceCodeInput = document.getElementById("referenceCode");
         var referenceCode = referenceCodeInput.value.trim();
-        var referenceCodeStatus = document.getElementById("referenceCodeStatus");
 
         // List of valid reference codes
-        var validReferenceCodes = ["ahmet15", "ali15", "mehmet15"]; // Geçerli referans kodlarını buraya ekleyin
+        var validReferenceCodes = ["code1", "code2", "code3"]; // Geçerli referans kodlarını buraya ekleyin
 
         // Check if the entered reference code is valid
         if (validReferenceCodes.includes(referenceCode)) {
-            referenceCodeStatus.innerHTML = '<i class="fa fa-check-circle" style="color: green;"></i>';
             // Eğer geçerli bir referans kodu ise %15 indirim uygula
             applyDiscount();
         } else {
-            referenceCodeStatus.innerHTML = '<i class="fa fa-times-circle" style="color: red;"></i> Invalid reference code.';
-            resetDiscount(); // Geçerli olmayan bir kod girildiğinde indirimi sıfırla
+            alert("Invalid reference code.");
         }
     }
 
     // İndirim uygulama fonksiyonu
     function applyDiscount() {
-        // Get the potential customers input and price element
+        // Get the price input
+        var priceInput = document.getElementById("displayedPrice");
+
+        // Get the potential customers input
         var potentialCustomersInput = document.getElementById("potentialCustomers");
         var potentialCustomers = potentialCustomersInput.value.trim();
-        var priceElement = document.getElementById("displayedPrice");
 
         // Check if it contains only numbers
         if (!/^\d+$/.test(potentialCustomers)) {
@@ -219,46 +218,7 @@ displayedPrice.style.color = "green";
         var discountedPrice = (price * 0.85).toFixed(2); // %15 indirim
 
         // Update the displayed price
-        priceElement.textContent = "$ " + discountedPrice + "/TOTAL";
-        priceElement.style.color = "green";
-    }
-
-    // İndirimi sıfırlama fonksiyonu
-    function resetDiscount() {
-        // Get the price element
-        var priceElement = document.getElementById("displayedPrice");
-
-        // Reset the price to its original value
-        var potentialCustomersInput = document.getElementById("potentialCustomers");
-        var potentialCustomers = potentialCustomersInput.value.trim();
-
-        // Calculate the price based on the potential customers
-        var price;
-        if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
-            price = (potentialCustomers * 0.25).toFixed(2);
-        } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
-            price = (potentialCustomers * 0.22).toFixed(2);
-        } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
-            price = (potentialCustomers * 0.19).toFixed(2);
-        } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
-            price = (potentialCustomers * 0.16).toFixed(2);
-        } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
-            price = (potentialCustomers * 0.13).toFixed(2);
-        } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
-            price = (potentialCustomers * 0.10).toFixed(2);
-        } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
-            price = (potentialCustomers * 0.06).toFixed(2);
-        } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
-            price = (potentialCustomers * 0.03).toFixed(2);
-        } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
-            price = (potentialCustomers * 0.0009).toFixed(2);
-        } else {
-            price = "Invalid quantity";
-        }
-
-        // Update the displayed price
-        priceElement.textContent = "$ " + price + "/TOTAL";
-        priceElement.style.color = "green";
+        priceInput.value = "$ " + discountedPrice + "/TOTAL";
     }
 </script>
   <!-- Ref Kısmı Bitis -->
@@ -356,6 +316,12 @@ displayedPrice.style.color = "green";
                     <div class="form-group">
     <label for="referenceCode" style="color: #ff4646;">Reference Code:</label>
     <input type="text" id="referenceCode" name="referenceCode" class="form-control" required>
+</div>
+
+<!-- Fiyat gösterme bölümü -->
+<div class="form-group">
+    <label for="displayedPrice" style="color: #ff4646;">Price:</label>
+    <input type="text" id="displayedPrice" class="form-control" disabled>
 </div>
                     <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */

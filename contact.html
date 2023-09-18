@@ -151,7 +151,30 @@ displayedPrice.style.color = "green";
             return true;
         }
     </script>
+  
+<!-- Ref Kısmı  -->
+<script>
+  
+  // Referans kodunu kontrol etme fonksiyonu
+function checkReferenceCode() {
+    // Get the reference code input
+    var referenceCodeInput = document.getElementById("referenceCode");
+    var referenceCode = referenceCodeInput.value.trim();
 
+    // List of valid reference codes
+    var validReferenceCodes = ["ahmet15", "mehmet15", "ali15"]; // 100 farklı referans kodu ekleyebilirsiniz
+
+    // Check if the entered reference code is valid
+    if (validReferenceCodes.includes(referenceCode)) {
+        // Eğer geçerli bir referans kodu ise %15 indirim uygula
+        calculatePrice(); // Daha önce tanımladığınız fiyat hesaplama fonksiyonunu çağırın
+    } else {
+        alert("Invalid reference code. No discount applied.");
+    }
+}
+  </script>
+  <!-- Ref Kısmı Bitis -->
+  
     <!-- contact section -->
 
     <style>
@@ -242,12 +265,21 @@ displayedPrice.style.color = "green";
                             margin-right: 20px;
                         }
                     </style>
-
                     <div class="form-group">
-                        <label for="message" style="color: #ff4646;">Message:</label>
-                        <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
-                        <small class="form-text text-muted">Maximum 250 characters.</small>
+                        <label for="fullName" style="color: #ff4646;">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
                     </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                            }
+                    </style>
+                    <div class="form-group">
+    <label for="referenceCode" style="color: #ff4646;">Reference Code:</label>
+    <input type="text" id="referenceCode" name="referenceCode" class="form-control" required>
+</div>
                     <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
                         .form_container .form-group {

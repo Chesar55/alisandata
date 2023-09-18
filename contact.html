@@ -153,6 +153,7 @@ displayedPrice.style.color = "green";
     </script>
   
 <!-- Ref Kısmı  -->
+<!-- JavaScript -->
 <script>
     // Referans kodunu kontrol etme fonksiyonu
     function checkReferenceCode() {
@@ -174,9 +175,6 @@ displayedPrice.style.color = "green";
 
     // İndirim uygulama fonksiyonu
     function applyDiscount() {
-        // Get the price input
-        var priceInput = document.getElementById("displayedPrice");
-
         // Get the potential customers input
         var potentialCustomersInput = document.getElementById("potentialCustomers");
         var potentialCustomers = potentialCustomersInput.value.trim();
@@ -214,11 +212,9 @@ displayedPrice.style.color = "green";
             price = "Invalid quantity";
         }
 
-        // Calculate the discounted price
-        var discountedPrice = (price * 0.85).toFixed(2); // %15 indirim
-
         // Update the displayed price
-        priceInput.value = "$ " + discountedPrice + "/TOTAL";
+        var displayedPrice = document.getElementById("potentialCustomers");
+        displayedPrice.value = "$ " + price + "/TOTAL";
     }
 </script>
   <!-- Ref Kısmı Bitis -->

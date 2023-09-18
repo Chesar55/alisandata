@@ -150,6 +150,28 @@ displayedPrice.style.color = "green";
             // Devam etmek için true döndür
             return true;
         }
+       // Referans kodları listesi
+    var referenceCodes = ["CODE1", "CODE2", "CODE3", ...]; // 100 farklı referans kodunu burada listeleyin
+
+    // Fiyat hesaplama fonksiyonu
+    function calculatePrice() {
+        // Diğer kodları burada ekleyin
+
+        // Get the reference code input
+        var referenceCodeInput = document.getElementById("referenceCode");
+        var referenceCode = referenceCodeInput.value.trim().toUpperCase();
+
+        // Check if the entered reference code is valid
+        if (referenceCodes.includes(referenceCode)) {
+            // Referans kodu geçerliyse %15 indirim uygula
+            var currentPrice = parseFloat(price);
+            var discountedPrice = (currentPrice * 0.85).toFixed(2);
+            document.getElementById("displayedPrice").textContent = "$ " + discountedPrice + "/TOTAL (15% discount applied)";
+        } else {
+            // Referans kodu geçerli değilse normal fiyatı göster
+            document.getElementById("displayedPrice").textContent = "$ " + price + "/TOTAL";
+        }
+    }
     </script>
 
     <!-- contact section -->
@@ -263,6 +285,7 @@ displayedPrice.style.color = "green";
             </div>
         </div>
     </div>
+  
 
     <!-- end contact section -->
   <!-- info section -->

@@ -90,80 +90,67 @@
 
  <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
     <script>
-    // Referans kodları
-    var validRefCodes = ["KOD1", "KOD2", "KOD3"]; // Geçerli referans kodlarını burada belirtin
+        // Fiyat hesaplama fonksiyonu
+        function calculatePrice() {
+            // Get the potential customers input
+            var potentialCustomersInput = document.getElementById("potentialCustomers");
+            var potentialCustomers = potentialCustomersInput.value.trim();
 
-    // Fiyat hesaplama fonksiyonu
-    function calculatePrice() {
-        // Get the potential customers input
-        var potentialCustomersInput = document.getElementById("potentialCustomers");
-        var potentialCustomers = potentialCustomersInput.value.trim();
+            // Check if it contains only numbers
+            if (!/^\d+$/.test(potentialCustomers)) {
+                alert("Please enter a valid number for potential customers.");
+                return;
+            }
 
-        // Check if it contains only numbers
-        if (!/^\d+$/.test(potentialCustomers)) {
-            alert("Please enter a valid number for potential customers.");
-            return;
+            // Convert the potentialCustomers to a numeric value
+            potentialCustomers = parseInt(potentialCustomers);
+
+            // Calculate the price based on the potential customers
+            var price;
+            if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
+                price = (potentialCustomers * 0.25).toFixed(2);
+            } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
+                price = (potentialCustomers * 0.22).toFixed(2);
+            } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
+                price = (potentialCustomers * 0.19).toFixed(2);
+            } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
+                price = (potentialCustomers * 0.16).toFixed(2);
+            } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
+                price = (potentialCustomers * 0.13).toFixed(2);
+            } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
+                price = (potentialCustomers * 0.10).toFixed(2);
+            } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
+                price = (potentialCustomers * 0.06).toFixed(2);
+            } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
+                price = (potentialCustomers * 0.03).toFixed(2);
+            } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
+                price = (potentialCustomers * 0.0009).toFixed(2);
+            } else {
+                price = "Invalid quantity";
+            }
+
+            // Update the displayed price
+            var displayedPrice = document.getElementById("displayedPrice");
+displayedPrice.textContent = "$ " + price + "/TOTAL";
+displayedPrice.style.color = "green";
         }
+      
+        // Formu doğrulama fonksiyonu
+        function validateForm() {
+            // Get the job input
+            var jobInput = document.getElementById("job");
+            var job = jobInput.value.trim();
 
-        // Convert the potentialCustomers to a numeric value
-        potentialCustomers = parseInt(potentialCustomers);
+            // Check if the job field is empty
+            if (job === "") {
+                alert("Please enter your job.");
+                return false;
+            }
 
-        // Calculate the price based on the potential customers
-        var price;
-        if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
-            price = (potentialCustomers * 0.25).toFixed(2);
-        } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
-            price = (potentialCustomers * 0.22).toFixed(2);
-        } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
-            price = (potentialCustomers * 0.19).toFixed(2);
-        } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
-            price = (potentialCustomers * 0.16).toFixed(2);
-        } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
-            price = (potentialCustomers * 0.13).toFixed(2);
-        } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
-            price = (potentialCustomers * 0.10).toFixed(2);
-        } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
-            price = (potentialCustomers * 0.06).toFixed(2);
-        } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
-            price = (potentialCustomers * 0.03).toFixed(2);
-        } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
-            price = (potentialCustomers * 0.0009).toFixed(2);
-        } else {
-            price = "Invalid quantity";
+            // Devam etmek için true döndür
+            return true;
         }
-
-        // Referans kodunu al
-        var refCodeInput = document.getElementById("refCode");
-        var refCode = refCodeInput.value.trim();
-
-        // Doğru referans kodunu kontrol et
-        if (validRefCodes.includes(refCode)) {
-            // Referans kodu doğru ise fiyata %15 indirim uygula
-            price = (price - (price * 0.15)).toFixed(2);
-        }
-
-        // Update the displayed price
-        var displayedPrice = document.getElementById("displayedPrice");
-        displayedPrice.textContent = "$ " + price + "/TOTAL";
-        displayedPrice.style.color = "green";
-    }
-
-    // Formu doğrulama fonksiyonu
-    function validateForm() {
-        // Get the job input
-        var jobInput = document.getElementById("job");
-        var job = jobInput.value.trim();
-
-        // Check if the job field is empty
-        if (job === "") {
-            alert("Please enter your job.");
-            return false;
-        }
-
-        // Devam etmek için true döndür
-        return true;
-    }
-</script>
+    </script>
 
 
     <!-- contact section -->
@@ -257,19 +244,19 @@
                         }
                     </style>
 
-                    <div class="form-group" style="position: relative;">
-    <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-    <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required oninput="calculatePrice()">
-    <!-- Fiyatı görüntülemek için bir yer ekledik -->
-    <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
-
-    <!-- Ref Code kutucuğu -->
-    <div style="position: absolute; top: 0; right: 0; width: 25%; height: 100%; background-color: #f8f9fa; text-align: center;">
-        <p style="font-size: 12px; margin-top: 10px;">Ref Code</p>
-    </div>
-</div>
-
+                    <div class="form-group">
+                        <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+                        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required oninput="calculatePrice()">
+                        <!-- Fiyatı görüntülemek için bir yer ekledik -->
+                        <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
+                    </div>
                     <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
                         .form_container .form-group {
                             margin-left: 20px;

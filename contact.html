@@ -91,6 +91,105 @@
 <!-- Ref Code input and message -->
 
 <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
+
+
+    <!-- contact section -->
+
+    <style>
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff4646;
+            border-color: #ff4646;
+        }
+    </style>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8 col-lg-6">
+            <div class="form_container">
+                <form action="https://formspree.io/f/xvojarkl" method="POST" onsubmit="return validateForm()">
+                    <div class="text-center">
+                        <h2 style="color: #ffffff;">CONTACT US</h2>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+                    <div class="form-group">
+                        <label for="fullName" style="color: #ff4646;">Full Name:</label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+
+                    <div class="form-group">
+                        <label for="email" style="color: #ff4646;">Your Email:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+
+                  <div class="form-group">
+    <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+    <small class="form-text text-muted"> </small>
+</div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+
+                    <div class="form-group">
+                        <label for="job" style="color: #ff4646;">Your Job:</label>
+                        <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+" required>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+
+                    <div class="form-group">
+                        <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+                        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required oninput="calculatePrice()">
+                        <!-- Fiyatı görüntülemek için bir yer ekledik -->
+                        <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+           <!-- Ref Code input and message -->
+<div class="form-group">
+    <label for="refCode" style="color: #ff4646;">Ref Code:</label>
+    <input type="text" id="refCode" name="refCode" class="form-control" style="width:100%;">
+    <p id="refCodeMessage" style="font-weight: bold;"></p>
+</div>
+<!-- JavaScript kodunu formun hemen üstüne ekleyin -->
 <script>
     // Store valid reference codes in an array
     var validRefCodes = ["AHMET15", "JOHN20", "MARY10"]; // You can change these
@@ -185,110 +284,6 @@
         }
     });
 </script>
-
-    <!-- contact section -->
-
-    <style>
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
-        }
-
-        .btn-primary:hover {
-            background-color: #ff4646;
-            border-color: #ff4646;
-        }
-    </style>
-
-    <div class="row justify-content-center mt-4">
-        <div class="col-md-8 col-lg-6">
-            <div class="form_container">
-                <form action="https://formspree.io/f/xvojarkl" method="POST" onsubmit="return validateForm()">
-                    <div class="text-center">
-                        <h2 style="color: #ffffff;">CONTACT US</h2>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
-                    <div class="form-group">
-                        <label for="fullName" style="color: #ff4646;">Full Name:</label>
-                        <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
-
-                    <div class="form-group">
-                        <label for="email" style="color: #ff4646;">Your Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
-
-                  <div class="form-group">
-    <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
-    <small class="form-text text-muted"> </small>
-</div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
-
-                    <div class="form-group">
-                        <label for="job" style="color: #ff4646;">Your Job:</label>
-                        <input type="text" id="job" name="job" class="form-control" pattern="[A-Za-z\s]+" required>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
-
-                    <div class="form-group">
-                        <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-                        <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" min="1000" max="100000000" required oninput="calculatePrice()">
-                        <!-- Fiyatı görüntülemek için bir yer ekledik -->
-                        <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
-           <div class="form-group">
-    <label for="refCode" style="color: #ff4646;">Ref Code:</label>
-    <input type="text" id="refCode" name="refCode" class="form-control">
-    <p id="refCodeMessage" style="font-weight: bold;"></p>
-</div>
-
-<style>
-    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-    .form_container .form-group {
-        margin-left: 5px;
-        margin-right: 5px;
-    }
-</style>
 
                   
                   <div class="form-group">

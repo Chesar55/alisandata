@@ -87,6 +87,41 @@
     </header>
     <!-- end header section -->
   </div>
+  
+  <script>
+    // Store valid reference codes in an array
+    var validRefCodes = ["AHMET15", "JOHN20", "MARY10"]; // You can change these
+
+    // Listen to the refCode input field
+    document.getElementById("refCode").addEventListener("input", function() {
+        var refCodeInput = this.value.trim();
+        var refCodeMessage = document.getElementById("refCodeMessage");
+
+        if (validRefCodes.includes(refCodeInput)) {
+            // When a valid reference code is entered
+            refCodeMessage.textContent = "Your %15 discount code has been applied";
+            refCodeMessage.style.color = "green";
+        } else if (refCodeInput === "") {
+            // Clear any message if it's empty
+            refCodeMessage.textContent = "";
+        } else {
+            // When an invalid code is entered
+            refCodeMessage.textContent = "Invalid reference code";
+            refCodeMessage.style.color = "red";
+        }
+    });
+</script>
+  
+  <script>
+    document.getElementById("phoneNumber").addEventListener("input", function() {
+        var phoneNumberInput = this.value;
+        if (phoneNumberInput && phoneNumberInput[0] !== "+") {
+            this.setCustomValidity("Please start your phone number with a '+' sign.");
+        } else {
+            this.setCustomValidity("");
+        }
+    });
+</script>
 
  <!-- JavaScript kodunu formun hemen üstüne ekleyin -->
     <script>
@@ -134,23 +169,6 @@
 displayedPrice.textContent = "$ " + price + "/TOTAL";
 displayedPrice.style.color = "green";
         }
-
-       // Get the reference code input
-        var refCodeInput = document.getElementById("refCode");
-        var refCode = refCodeInput.value.trim();
-
-        // Check if the entered reference code is in the allowed codes array
-        if (allowedCodes.includes(refCode)) {
-            // Update the displayed price with a green checkmark
-            var displayedPrice = document.getElementById("displayedPrice");
-            displayedPrice.textContent = "$ " + price + "/TOTAL ✓";
-            displayedPrice.style.color = "green";
-        } else {
-            // Display an error message if the reference code is not valid
-            alert("Invalid reference code.");
-        }
-    }
-      
       
         // Formu doğrulama fonksiyonu
         function validateForm() {
@@ -222,11 +240,11 @@ displayedPrice.style.color = "green";
                         }
                     </style>
 
-                    <div class="form-group">
-                        <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-                        <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
-                        <small class="form-text text-muted">Please enter your phone number in the format +1234567890</small>
-                    </div>
+                  <div class="form-group">
+    <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
+    <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
+    <small class="form-text text-muted"> </small>
+</div>
                     <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
                         .form_container .form-group {
@@ -260,9 +278,10 @@ displayedPrice.style.color = "green";
                             margin-right: 20px;
                         }
                     </style>
-                 <div class="form-group">
+             <div class="form-group">
     <label for="refCode" style="color: #ff4646;">Ref Code:</label>
     <input type="text" id="refCode" name="refCode" class="form-control">
+    <small id="refCodeMessage" class="form-text text-muted"></small>
 </div>
                    <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */

@@ -1,0 +1,19 @@
+RewriteEngine On
+
+RewriteRule ^home$ index.html [L]
+RewriteRule ^about$ about.html [L]
+RewriteRule ^services$ services.html [L]
+RewriteRule ^pricing$ pricing.html [L]
+RewriteRule ^contact$ contact.html [L]
+
+
+RewriteRule ^home$ index.html [L]
+RewriteRule ^about$ about.html [L]
+RewriteRule ^services$ services.html [L]
+RewriteRule ^pricing$ pricing.html [L]
+RewriteRule ^contact$ contact
+
+
+RewriteRule ^home$ index.html [L]
+RewriteRule ^about$ about.html [L]
+RewriteRule ^

@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^home$ /index.html [NC,L]
+RewriteRule ^about$ /about.html [NC,L]
+RewriteRule ^services$ /services.html [NC,L]
+RewriteRule ^pricing$ /pricing.html [NC,L]
+RewriteRule ^contact-us$ /contact-us.html [NC,L]
+RewriteRule ^faq$ /faq.html [NC,L]

@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css"> <!-- Dışarıdan bir CSS dosyası bağladığınızda bu satırı ekleyin -->
+    <title>404 Not Found</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 * {
@@ -252,11 +251,16 @@ a {
   --translateY: calc((var(--Y)) * var(--scaleY) * 1px);
   transform: translate(var(--translateX), var(--translateY));
 }
+        body {
+            background-color: #ff4646;
+            color: #202232;
+        }
+        /* Diğer stil kuralları */
     </style>
 </head>
 <body>
-    <div id="app"></div>
-    <script>
+    
+  <script>
        const {
   React: { useEffect },
   ReactDOM: { render },
@@ -484,5 +488,6 @@ const ROOT = document.getElementById('app')
 render(<FourOhFour />, ROOT)
 
     </script>
+    
 </body>
 </html>

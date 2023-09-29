@@ -2,19 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <!-- Dışarıdan bir CSS dosyası bağladığınızda bu satırı ekleyin -->
-    <title>404 Not Found</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>404 - Page Not Found</title>
     <style>
-        /* CSS kodlarınız buraya gelecek */
         body {
-            background-color: #ff4646;
-            color: #202232;
+            background-image: url('image.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
         }
-        /* Diğer stil kuralları */
+
+        .container {
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px; /* Set your desired logo size */
+            height: 100px; /* Set your desired logo size */
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #ff4646;
+        }
+
+        a {
+            color: #202232;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <!-- Sayfa içeriği -->
+    <div class="container">
+        <img src="favicon.png" alt="Logo" class="logo">
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, the page you are looking for could not be found.</p>
+        <a href="/">Return to the Homepage</a>
+    </div>
 </body>
 </html>

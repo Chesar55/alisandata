@@ -119,30 +119,37 @@
                         .form_container .form-group {
                             margin-left: 20px;
                             margin-right: 20px;
-                        }
-                    </style>
-                    <div class="form-group">
-                        <label for="fullName" style="color: #ff4646;">Full Name:</label>
-                        <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
-                    </style>
+                     <style>
+    /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+    .form_container .form-group {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 
-                    <div class="form-group">
-                        <label for="email" style="color: #ff4646;">Your Email:</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <style>
-                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                        .form_container .form-group {
-                            margin-left: 20px;
-                            margin-right: 20px;
-                        }
+    /* İki doldurma alanını yan yana sığdır */
+    .form-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .form-container .form-group {
+        flex: 0 0 calc(50% - 20px);
+    }
+</style>
+
+<div class="form-container">
+    <div class="form-group">
+        <label for="fullName" style="color: #ff4646;">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email" style="color: #ff4646;">Your Email:</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+</div>
+
                     </style>
 
                   <div class="form-group">

@@ -104,56 +104,57 @@
                   </div>
   
                   <div class="form-row">
-                      <div class="col-6">
-                          <div class="form-group">
-                              <label for="industry" style="color: #ff4646;">Industry:</label>
-                              <input type="text" id="industry" name="industry" class="form-control" pattern="" required>
-                          </div>
-  
-                          <div class="form-group">
-                              <label for="Location Name" style="color: #ff4646;">Location Name:</label>
-                              <input type="Location Name" id="Location Name" name="Location Name" class="form-control" required>
-                          </div>
-                      </div>
-  
-                      <div class="col-6">
-                          <div class="form-group">
-                              <label for="Job Title" style="color: #ff4646;"Job Title:</label>
-                              <input type="text" id="Job Title" name="Job Title" class="form-control" required>
-                          </div>
-  
-                          <div class="form-group">
-                              <label for="summary" style="color: #ff4646;">summary:</label>
-                              <input type="text" id="summary" name "job" class="form-control" pattern="" required>
-                          </div>
-                      </div>
-                  </div>
-                <div class="form-row">
-                      <div class="col-6">
-                          <div class="form-group">
-                              <label for="Job Company Industry" style="color: #ff4646;">Job Company Industry:</label>
-                              <input type="text" id="Job Company Industry" name="Job Company Industry" class="form-control" pattern="" required>
-                          </div>
-  
-                          <div class="form-group">
-                              <label for="Job Company Name" style="color: #ff4646;">Job Company Name:</label>
-                              <input type="Job Company Name" id="Job Company Name" name="Job Company Name" class="form-control" required>
-                          </div>
-                      </div>
-  
-                      <div class="col-6">
-                          <div class="form-group">
-                              <label for="Job Company Website" style="color: #ff4646;">Job Company Website:</label>
-                              <input type="text" id="Job Company Website" name="Job Company Website" class="form-control" required>                           
-                          </div>
-  
-                          <div class="form-group">
-                              <label for="Emails" style="color: #ff4646;">Emails:</label>
-                              <input type="text" id="Emails" name "Emails" class="form-control" pattern="" required>
-                          </div>
-                      </div>
-                  </div>
-  
+    <div class="col-6">
+        <div class="form-group">
+            <label for="industry" style="color: #ff4646;">Industry:</label>
+            <input type="text" id="industry" name="industry" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="LocationName" style="color: #ff4646;">Location Name:</label>
+            <input type="text" id="LocationName" name="LocationName" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="form-group">
+            <label for="JobTitle" style="color: #ff4646;">Job Title:</label>
+            <input type="text" id="JobTitle" name="JobTitle" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="summary" style="color: #ff4646;">Summary:</label>
+            <input type="text" id="summary" name="summary" class="form-control" required>
+        </div>
+    </div>
+</div>
+
+<div class="form-row">
+    <div class="col-6">
+        <div class="form-group">
+            <label for="JobCompanyIndustry" style="color: #ff4646;">Job Company Industry:</label>
+            <input type="text" id="JobCompanyIndustry" name="JobCompanyIndustry" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="JobCompanyName" style="color: #ff4646;">Job Company Name:</label>
+            <input type="text" id="JobCompanyName" name="JobCompanyName" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class "form-group">
+            <label for="JobCompanyWebsite" style="color: #ff4646;">Job Company Website:</label>
+            <input type="text" id="JobCompanyWebsite" name="JobCompanyWebsite" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label for="Emails" style="color: #ff4646;">Emails:</label>
+            <input type="text" id="Emails" name="Emails" class="form-control" required>
+        </div>
+    </div>
+</div>
+
                   <div class="form-group">
     <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
     <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" style="width: 100%;" min="250" max="100000000" required>
@@ -166,17 +167,17 @@
     <p id="couponCodeMessage" style="font-weight: bold;"></p>
 </div>
 <script>
-    // Store valid reference codes in an array
-    var validcouponCodes = ["AHMET15", "JOHN20", "MARY10"]; // You can change these
+    // Store valid coupon codes in an array
+    var validCouponCodes = ["AHMET15", "JOHN20", "MARY10"];
 
-    // Listen to the refCode input field
-    document.getElementById("refCode").addEventListener("input", function() {
+    // Listen to the couponCode input field
+    document.getElementById("couponCode").addEventListener("input", function() {
         var couponCodeInput = this.value.trim();
         var couponCodeMessage = document.getElementById("couponCodeMessage");
 
         if (validCouponCodes.includes(couponCodeInput)) {
-            // When a valid coupon Code is entered
-            couponCodeMessage.textContent = "Your %15 discount code has been applied";
+            // When a valid coupon code is entered
+            couponCodeMessage.textContent = "Your 15% discount code has been applied";
             couponCodeMessage.style.color = "green";
 
             // Get the potential customers input
@@ -221,7 +222,7 @@
             displayedPrice.textContent = "$ " + price + "/TOTAL";
             displayedPrice.style.color = "green";
         } else if (couponCodeInput === "") {
-            // Clear any message if refCode is empty
+            // Clear any message if couponCode is empty
             couponCodeMessage.textContent = "";
         } else {
             // When an invalid code is entered

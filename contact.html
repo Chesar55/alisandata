@@ -106,177 +106,198 @@
                   <div class="form-row">
                       <div class="col-6">
                           <div class="form-group">
-                              <label for="fullName" style="color: #ff4646;">Full Name:</label>
-                              <input type="text" id="fullName" name="fullName" class="form-control" pattern="[A-Za-z\s]+" required>
+                              <label for="industry" style="color: #ff4646;">Industry:</label>
+                              <input type="text" id="industry" name="industry" class="form-control" pattern="" required>
                           </div>
   
                           <div class="form-group">
-                              <label for="email" style="color: #ff4646;">Your Email:</label>
-                              <input type="email" id="email" name="email" class="form-control" required>
+                              <label for="Location Name" style="color: #ff4646;">Location Name:</label>
+                              <input type="Location Name" id="Location Name" name="Location Name" class="form-control" required>
                           </div>
                       </div>
   
                       <div class="col-6">
                           <div class="form-group">
-                              <label for="phoneNumber" style="color: #ff4646;">Phone Number:</label>
-                              <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" required>
-                              <small class="form-text text-muted"> </small>
+                              <label for="Job Title" style="color: #ff4646;"Job Title:</label>
+                              <input type="text" id="Job Title" name="Job Title" class="form-control" required>
                           </div>
   
                           <div class="form-group">
-                              <label for="job" style="color: #ff4646;">Your Job:</label>
-                              <input type="text" id="job" name "job" class="form-control" pattern="[A-Za-z\s]+" required>
+                              <label for="summary" style="color: #ff4646;">summary:</label>
+                              <input type="text" id="summary" name "job" class="form-control" pattern="" required>
+                          </div>
+                      </div>
+                  </div>
+                <div class="form-row">
+                      <div class="col-6">
+                          <div class="form-group">
+                              <label for="Job Company Industry" style="color: #ff4646;">Job Company Industry:</label>
+                              <input type="text" id="Job Company Industry" name="Job Company Industry" class="form-control" pattern="" required>
+                          </div>
+  
+                          <div class="form-group">
+                              <label for="Job Company Name" style="color: #ff4646;">Job Company Name:</label>
+                              <input type="Job Company Name" id="Job Company Name" name="Job Company Name" class="form-control" required>
+                          </div>
+                      </div>
+  
+                      <div class="col-6">
+                          <div class="form-group">
+                              <label for="Job Company Website" style="color: #ff4646;">Job Company Website:</label>
+                              <input type="text" id="Job Company Website" name="Job Company Website" class="form-control" required>                           
+                          </div>
+  
+                          <div class="form-group">
+                              <label for="Emails" style="color: #ff4646;">Emails:</label>
+                              <input type="text" id="Emails" name "Emails" class="form-control" pattern="" required>
                           </div>
                       </div>
                   </div>
   
                   <div class="form-group">
-                      <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-                      <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" style="width: 100%;" min="1000" max="100000000" required>
-                      <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
-                  </div>
-  
+    <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
+    <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" style="width: 100%;" min="250" max="100000000" required>
+    <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
+</div>
+
+<div class="form-group">
+    <label for="couponCode" style="color: #ff4646;">Coupon Code:</label>
+    <input type="text" id="couponCode" name="couponCode" class="form-control" style="width: 100%;">
+    <p id="couponCodeMessage" style="font-weight: bold;"></p>
+</div>
+<script>
+    // Store valid reference codes in an array
+    var validcouponCodes = ["AHMET15", "JOHN20", "MARY10"]; // You can change these
+
+    // Listen to the refCode input field
+    document.getElementById("refCode").addEventListener("input", function() {
+        var couponCodeInput = this.value.trim();
+        var couponCodeMessage = document.getElementById("couponCodeMessage");
+
+        if (validCouponCodes.includes(couponCodeInput)) {
+            // When a valid coupon Code is entered
+            couponCodeMessage.textContent = "Your %15 discount code has been applied";
+            couponCodeMessage.style.color = "green";
+
+            // Get the potential customers input
+            var potentialCustomersInput = document.getElementById("potentialCustomers");
+            var potentialCustomers = potentialCustomersInput.value.trim();
+
+            // Check if it contains only numbers
+            if (!/^\d+$/.test(potentialCustomers)) {
+                alert("Please enter a valid number for potential customers.");
+                return;
+            }
+
+            // Convert the potentialCustomers to a numeric value
+            potentialCustomers = parseInt(potentialCustomers);
+
+            // Calculate the price based on the potential customers
+            var price;
+            if (potentialCustomers >= 250 && potentialCustomers < 10000) {
+                price = (potentialCustomers * 0.25 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 250 && potentialCustomers < 50000) {
+                price = (potentialCustomers * 0.22 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
+                price = (potentialCustomers * 0.19 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
+                price = (potentialCustomers * 0.16 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
+                price = (potentialCustomers * 0.13 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
+                price = (potentialCustomers * 0.10 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
+                price = (potentialCustomers * 0.06 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
+                price = (potentialCustomers * 0.03 * 0.85).toFixed(2);
+            } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
+                price = (potentialCustomers * 0.009 * 0.85).toFixed(2);
+            } else {
+                price = "Invalid quantity";
+            }
+
+            // Update the displayed price
+            var displayedPrice = document.getElementById("displayedPrice");
+            displayedPrice.textContent = "$ " + price + "/TOTAL";
+            displayedPrice.style.color = "green";
+        } else if (couponCodeInput === "") {
+            // Clear any message if refCode is empty
+            couponCodeMessage.textContent = "";
+        } else {
+            // When an invalid code is entered
+            couponCodeMessage.textContent = "Invalid Coupon Code";
+            couponCodeMessage.style.color = "red";
+        }
+    });
+
+    // Listen to the potentialCustomers input field for price calculation
+    document.getElementById("potentialCustomers").addEventListener("input", calculatePrice);
+
+    // Price calculation function
+    function calculatePrice() {
+        // Get the potential customers input
+        var potentialCustomersInput = document.getElementById("potentialCustomers");
+        var potentialCustomers = potentialCustomersInput.value.trim();
+
+        // Check if it contains only numbers
+        if (!/^\d+$/.test(potentialCustomers)) {
+            alert("Please enter a valid number for potential customers.");
+            return;
+        }
+
+        // Convert the potentialCustomers to a numeric value
+        potentialCustomers = parseInt(potentialCustomers);
+
+        // Calculate the price based on the potential customers
+        var price;
+        if (potentialCustomers >= 250 && potentialCustomers < 10000) {
+            price = (potentialCustomers * 0.25).toFixed(2);
+        } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
+            price = (potentialCustomers * 0.22).toFixed(2);
+        } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
+            price = (potentialCustomers * 0.19).toFixed(2);
+        } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
+            price = (potentialCustomers * 0.16).toFixed(2);
+        } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
+            price = (potentialCustomers * 0.13).toFixed(2);
+        } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
+            price = (potentialCustomers * 0.10).toFixed(2);
+        } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
+            price = (potentialCustomers * 0.06).toFixed(2);
+        } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
+            price = (potentialCustomers * 0.03).toFixed(2);
+        } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
+            price = (potentialCustomers * 0.009).toFixed(2);
+        } else {
+            price = "Invalid quantity";
+        }
+
+        // Update the displayed price
+        var displayedPrice = document.getElementById("displayedPrice");
+        displayedPrice.textContent = "$ " + price + "/TOTAL";
+        displayedPrice.style.color = "green";
+    }
+</script>      
                   <div class="form-group">
-                      <label for="refCode" style="color: #ff4646;">Ref Code:</label>
-                      <input type="text" id="refCode" name="refCode" class="form-control" style="width: 100%;">
-                      <p id="refCodeMessage" style="font-weight: bold;"></p>
-                  </div>
-  
-                  <script>
-                      // Store valid reference codes in an array
-                      var validRefCodes = ["AHMET15", "JOHN20", "MARY10"]; // You can change these
-  
-                      // Listen to the refCode input field
-                      document.getElementById("refCode").addEventListener("input", function() {
-                          var refCodeInput = this.value.trim();
-                          var refCodeMessage = document.getElementById("refCodeMessage");
-  
-                          if (validRefCodes.includes(refCodeInput)) {
-                              // When a valid reference code is entered
-                              refCodeMessage.textContent = "Your %15 discount code has been applied";
-                              refCodeMessage.style.color = "green";
-  
-                              // Get the potential customers input
-                              var potentialCustomersInput = document.getElementById("potentialCustomers");
-                              var potentialCustomers = potentialCustomersInput.value.trim();
-  
-                              // Check if it contains only numbers
-                              if (!/^\d+$/.test(potentialCustomers)) {
-                                  alert("Please enter a valid number for potential customers.");
-                                  return;
-                              }
-  
-                              // Convert the potentialCustomers to a numeric value
-                              potentialCustomers = parseInt(potentialCustomers);
-  
-                              // Calculate the price based on the potential customers
-                              var price;
-                              if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
-                                  price = (potentialCustomers * 0.25 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
-                                  price = (potentialCustomers * 0.22 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
-                                  price = (potentialCustomers * 0.19 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
-                                  price = (potentialCustomers * 0.16 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
-                                  price = (potentialCustomers * 0.13 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 1000000 and potentialCustomers < 5000000) {
-                                  price = (potentialCustomers * 0.10 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
-                                  price = (potentialCustomers * 0.06 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
-                                  price = (potentialCustomers * 0.03 * 0.85).toFixed(2);
-                              } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
-                                  price = (potentialCustomers * 0.0009 * 0.85).toFixed(2);
-                              } else {
-                                  price = "Invalid quantity";
-                              }
-  
-                              // Update the displayed price
-                              var displayedPrice = document.getElementById("displayedPrice");
-                              displayedPrice.textContent = "$ " + price + "/TOTAL";
-                              displayedPrice.style.color = "green";
-                          } else if (refCodeInput === "") {
-                              // Clear any message if refCode is empty
-                              refCodeMessage.textContent = "";
-                          } else {
-                              // When an invalid code is entered
-                              refCodeMessage.textContent = "Invalid reference code";
-                              refCodeMessage.style.color = "red";
-                          }
-                      });
-  
-                      // Listen to the potentialCustomers input field for price calculation
-                      document.getElementById("potentialCustomers").addEventListener("input", calculatePrice);
-  
-                      // Price calculation function
-                      function calculatePrice() {
-                          // Get the potential customers input
-                          var potentialCustomersInput = document.getElementById("potentialCustomers");
-                          var potentialCustomers = potentialCustomersInput.value.trim();
-  
-                          // Check if it contains only numbers
-                          if (!/^\d+$/.test(potentialCustomers)) {
-                              alert("Please enter a valid number for potential customers.");
-                              return;
-                          }
-  
-                          // Convert the potentialCustomers to a numeric value
-                          potentialCustomers = parseInt(potentialCustomers);
-  
-                          // Calculate the price based on the potential customers
-                          var price;
-                          if (potentialCustomers >= 1000 && potentialCustomers < 10000) {
-                              price = (potentialCustomers * 0.25).toFixed(2);
-                          } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
-                              price = (potentialCustomers * 0.22).toFixed(2);
-                          } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
-                              price = (potentialCustomers * 0.19).toFixed(2);
-                          } else if (potentialCustomers >= 100000 && potentialCustomers < 500000) {
-                              price = (potentialCustomers * 0.16).toFixed(2);
-                          } else if (potentialCustomers >= 500000 && potentialCustomers < 1000000) {
-                              price = (potentialCustomers * 0.13).toFixed(2);
-                          } else if (potentialCustomers >= 1000000 && potentialCustomers < 5000000) {
-                              price = (potentialCustomers * 0.10).toFixed(2);
-                          } else if (potentialCustomers >= 5000000 && potentialCustomers < 10000000) {
-                              price = (potentialCustomers * 0.06).toFixed(2);
-                          } else if (potentialCustomers >= 10000000 && potentialCustomers < 50000000) {
-                              price = (potentialCustomers * 0.03).toFixed(2);
-                          } else if (potentialCustomers >= 50000000 && potentialCustomers <= 100000000) {
-                              price = (potentialCustomers * 0.0009).toFixed(2);
-                          } else {
-                              price = "Invalid quantity";
-                          }
-  
-                          // Update the displayed price
-                          var displayedPrice = document.getElementById("displayedPrice");
-                          displayedPrice.textContent = "$ " + price + "/TOTAL";
-                          displayedPrice.style.color = "green";
-                      }
-                  </script>
-  
-                  <div class="form-group">
-                      <label for="message" style="color: #ff4646;">Message:</label>
-                      <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
-                      <small class="form-text text-muted">Maximum 250 characters.</small>
-                  </div>
-  
-                  <style>
-                      /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
-                      .form_container .form-group {
-                          margin-left: 20px;
-                          margin-right: 20px;
-                      }
-                  </style>
-  
-                  <center>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                  </center>
-              </form>
-          </div>
-      </div>
-  </div>
+                        <label for="message" style="color: #ff4646;">Message:</label>
+                        <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
+                        <small class="form-text text-muted">Maximum 250 characters.</small>
+                    </div>
+                    <style>
+                        /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */
+                        .form_container .form-group {
+                            margin-left: 20px;
+                            margin-right: 20px;
+                        }
+                    </style>
+
+                    <center>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
   
 
     <!-- end contact section -->

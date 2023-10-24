@@ -1,2 +1,6 @@
-title: My GitHub Page
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
+title: ALISANDATA
+description: One Platform To Power Your Go-To-Market.
+baseurl: "/alisandata"
+permalink: /:title
+exclude: ["vendor"]

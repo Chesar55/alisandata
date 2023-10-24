@@ -3,4 +3,5 @@ title: ALISANDATA
 description: One Platform To Power Your Go-To-Market.
 baseurl: "/alisandata"
 permalink: /:title
-exclude: ["vendor", "contact.html", "about.html", "faq.html", "crypto_payment.html"]
+exclude:
+  - "vendor"

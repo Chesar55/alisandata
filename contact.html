@@ -158,7 +158,7 @@
 
                   <div class="form-group">
     <label for="potentialCustomers" style="color: #ff4646;">How Many Potential Customers:</label>
-    <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" style="width: 100%;" min="250" max="100000000" required>
+    <input type="number" id="potentialCustomers" name="potentialCustomers" class="form-control" style="width: 100%;" min="50" max="100000000" required>
     <p id="displayedPrice" style="color: #ff4646; font-weight: bold;"></p>
 </div>
 
@@ -196,9 +196,9 @@
 
             // Calculate the price based on the potential customers
             var price;
-            if (potentialCustomers >= 250 && potentialCustomers < 10000) {
+            if (potentialCustomers >= 50 && potentialCustomers < 10000) {
                 price = (potentialCustomers * 0.25 * 0.85).toFixed(2);
-            } else if (potentialCustomers >= 250 && potentialCustomers < 50000) {
+            } else if (potentialCustomers >= 50 && potentialCustomers < 50000) {
                 price = (potentialCustomers * 0.22 * 0.85).toFixed(2);
             } else if (potentialCustomers >= 50000 && potentialCustomers < 100000) {
                 price = (potentialCustomers * 0.19 * 0.85).toFixed(2);
@@ -252,7 +252,7 @@
 
         // Calculate the price based on the potential customers
         var price;
-        if (potentialCustomers >= 250 && potentialCustomers < 10000) {
+        if (potentialCustomers >= 50 && potentialCustomers < 10000) {
             price = (potentialCustomers * 0.25).toFixed(2);
         } else if (potentialCustomers >= 10000 && potentialCustomers < 50000) {
             price = (potentialCustomers * 0.22).toFixed(2);
@@ -282,8 +282,8 @@
 </script>      
                   <div class="form-group">
                         <label for="message" style="color: #ff4646;">Message:</label>
-                        <textarea id="message" name="message" class="form-control" maxlength="250" required></textarea>
-                        <small class="form-text text-muted">Maximum 250 characters.</small>
+                        <textarea id="message" name="message" class="form-control" maxlength="50" required></textarea>
+                        <small class="form-text text-muted">Maximum 50 characters.</small>
                     </div>
                     <style>
                         /* İletişim formu kutularının sağ ve sol tarafında boşluk bırak */

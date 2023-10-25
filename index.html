@@ -481,7 +481,12 @@ AlisanData is a platform that provides valuable information about your business'
             </div>
           </div>
           <div class="info_social">
-            
+           <h4>
+            Info
+          </h4>
+          <p>
+            We're a tech-focused team dedicated to simplifying complexity and enhancing user efficiency. Since 2021, we've been delivering innovative solutions across industries, aiming to make tasks easier and more effective for our customers.
+          </p> 
             
           </div>
         </div>
@@ -520,67 +525,7 @@ AlisanData is a platform that provides valuable information about your business'
         </div>
         <div class="col-md-3">
           <div class="info_detail">
-            <head>
-    <title>Email Subscription Form</title>
-</head>
-<body>
-    <h1>Subscribe</h1>
-    <p>Enter your email address to subscribe.</p>
-    <form id="subscribeForm">
-        <input type="email" id="email" placeholder="Enter your email address" required>
-        <button type="submit">Subscribe</button>
-    </form>
-    
-    <script>
-        document.getElementById("subscribeForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            const email = document.getElementById("email").value;
             
-            // Send the email to info@alisandata.com
-            sendEmailToInfoAddress(email);info@alisandata.com
-    
-            // Reset the subscription form
-            document.getElementById("subscribeForm").reset();
-    
-            alert("You have successfully subscribed!");
-        });
-    
-        function sendEmailToInfoAddress(email) {
-            // Sending an email using JavaScript
-            // This operation should be done on the server side, using a server-side email service.
-            // Below is a simple example of how you could send an email on the server side using Node.js.
-            // This code should be run on the server, not in the browser.
-            
-            // Example Node.js code using Nodemailer:
-            /*
-            const nodemailer = require('nodemailer');
-
-            const transporter = nodemailer.createTransport({
-                service: 'YourEmailService', // e.g., 'Gmail'
-                auth: {
-                    user: 'yourEmailAddress@gmail.com',
-                    pass: 'yourEmailPassword'
-                }
-            });
-
-            const mailOptions = {
-                from: 'yourEmailAddress@gmail.com',
-                to: 'info@alisandata.com',
-                subject: 'New Subscriber',
-                text: 'New subscriber email address: ' + email
-            };
-
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log('Email sent: ' + info.response);
-                }
-            });
-            */
-        }
-    </script>
-</body>
           </div>
         </div>
         <div class="col-md-3 mb-0">

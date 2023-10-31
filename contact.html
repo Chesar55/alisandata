@@ -100,30 +100,50 @@
           <div class="form_container">
               <form action="https://formspree.io/f/xvojarkl" method="POST" onsubmit="return validateForm()">
                   <div class="text-center">
-                      <h2 style="color: #ffffff;">CONTACT US</h2>
-                  </div>
+    <h2 style="color: #ffffff;">CONTACT US</h2>
+    <div id="info-tooltip" style="display: none; position: absolute; top: 0; right: 0; cursor: pointer;">
+        <span>&#63;</span>
+        <div id="tooltip-content" style="background-color: #ffffff; padding: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);">
+            Complete the filtering of individuals you want to remove in the green areas in this field, with a minimum of 1 entry. You can fill in as much detail as you prefer. Additionally, fill in the necessary information and click the submit button, and we will parse and present the data you desire.
+        </div>
+    </div>
+</div>
+
+<script>
+    const infoTooltip = document.getElementById("info-tooltip");
+    const tooltipContent = document.getElementById("tooltip-content");
+
+    infoTooltip.addEventListener("mouseover", () => {
+        tooltipContent.style.display = "block";
+    });
+
+    infoTooltip.addEventListener("mouseout", () => {
+        tooltipContent.style.display = "none";
+    });
+</script>
+
   
                   <div class="form-row">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="industry" style="color: #ff4646;">Industry:</label>
+            <label for="industry" style="color: #12af83;">Industry:</label>
             <input type="text" id="industry" name="industry" class="form-control">
         </div>
 
         <div class="form-group">
-            <label for="LocationName" style="color: #ff4646;">Location Name:</label>
+            <label for="LocationName" style="color: #12af83;">Location Name:</label>
             <input type="text" id="LocationName" name="LocationName" class="form-control">
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="form-group">
-            <label for="JobTitle" style="color: #ff4646;">Job Title:</label>
+            <label for="JobTitle" style="color: #12af83;">Job Title:</label>
             <input type="text" id="JobTitle" name="JobTitle" class="form-control">
         </div>
 
         <div class="form-group">
-            <label for="summary" style="color: #ff4646;">Summary:</label>
+            <label for="summary" style="color: #12af83;">Summary:</label>
             <input type="text" id="summary" name="summary" class="form-control">
         </div>
     </div>
@@ -132,24 +152,24 @@
 <div class="form-row">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="JobCompanyIndustry" style="color: #ff4646;">Job Company Industry:</label>
+            <label for="JobCompanyIndustry" style="color: #12af83;">Job Company Industry:</label>
             <input type="text" id="JobCompanyIndustry" name="JobCompanyIndustry" class="form-control">
         </div>
 
         <div class="form-group">
-            <label for="JobCompanyName" style="color: #ff4646;">Job Company Name:</label>
+            <label for="JobCompanyName" style="color: #12af83;">Job Company Name:</label>
             <input type="text" id="JobCompanyName" name="JobCompanyName" class="form-control">
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="form-group">
-            <label for="Emails" style="color: #ff4646;">Emails:</label>
+            <label for="Emails" style="color: #12af83;">Emails:</label>
             <input type="text" id="Emails" name="Emails" class="form-control">
         </div>
 
         <div class="form-group">
-            <label for="JobCompanyWebsite" style="color: #ff4646;">Job Company Website:</label>
+            <label for="JobCompanyWebsite" style="color: #12af83;">Job Company Website:</label>
             <input type="text" id="JobCompanyWebsite" name="JobCompanyWebsite" class="form-control">
         </div>
     </div>
